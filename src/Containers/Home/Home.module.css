@@ -12,16 +12,35 @@
   height: 100%;
 }
 
-.bodyMain > div:nth-child(1),
-.bodyMain > div:nth-child(3) {
+.leftSection,
+.rightSection {
   width: 335px;
 }
 
-.bodyMain > div:nth-child(2) {
+.containerMain {
   width: 100%;
-  /* border: 2px solid red; */
+  padding: 0 20px;
 }
 
-.containerMain {
-  padding: 0 20px;
+@media screen and (min-width: 767px) and (max-width: 1023px) {
+  .leftSection,
+  .rightSection {
+    display: none;
+  }
+  .containerMain {
+    width: 100%;
+    padding: 0;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .leftSection,
+  .rightSection {
+    display: none;
+  }
+
+  .containerMain {
+    width: 100%;
+    padding: 0;
+  }
 }

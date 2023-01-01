@@ -4,6 +4,7 @@ import FeaturedNews from "./FeaturedNews";
 import classes from "./Home.module.css";
 import HomeAdSection from "./HomeAdSection";
 import HomeLiveMatches from "./HomeLiveMatches";
+import HomeNews from "./HomeNews";
 import HomeRightSectionAd from "./HomeRightSectionAd";
 import HomeTweetSection from "./HomeTweetSection";
 import LeagueTableContainer from "./LeagueTableContainer";
@@ -17,7 +18,7 @@ const Home = () => {
           <HomeAdSection />
         </div>
         <div className={classes.bodyMain}>
-          <div>
+          <div className={classes.leftSection}>
             <div>
               <HomeLiveMatches />
             </div>
@@ -29,8 +30,11 @@ const Home = () => {
             <div className={classes.featuredNews}>
               <FeaturedNews />
             </div>
+            <div className={classes.news}>
+              <HomeNews />
+            </div>
           </div>
-          <div>
+          <div className={classes.rightSection}>
             <div className={classes.leagueTable}>
               <LeagueTableContainer />
             </div>
