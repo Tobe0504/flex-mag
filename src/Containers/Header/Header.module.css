@@ -1,0 +1,108 @@
+@keyframes appear {
+  0% {
+    width: 0;
+  }
+  100% {
+    width: 100%;
+  }
+}
+
+.container {
+  background: #001a43;
+  height: 100%;
+  display: flex;
+  align-content: center;
+  justify-content: space-between;
+  padding: 0 5%;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 21px;
+  border-bottom: 2px solid #ef2339;
+  color: #ffffff;
+}
+
+.logoSection,
+.search {
+  align-self: center;
+}
+
+.navItemSection {
+  align-self: stretch;
+}
+
+.logosection {
+  display: flex;
+  align-items: center;
+}
+
+.navItemSection {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  align-items: center;
+}
+
+.navItemSection > a {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-direction: column;
+  height: 100%;
+}
+
+.navItem {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  align-items: center;
+  transition: all 0.3s ease-in-out;
+  position: relative;
+  height: 100%;
+  transition: all 0.3s ease-in-out;
+}
+
+.activeIndicator {
+  width: 100%;
+  background-color: #ffffff;
+  height: 4px;
+  border-radius: 100px;
+  animation: appear 0.3s ease-in-out;
+}
+
+.responsivemenu,
+.searchSection {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  display: none;
+}
+
+@media screen and (min-width: 767px) and (max-width: 1023px) {
+  .navItemSection,
+  .dropdownSection {
+    display: none;
+  }
+
+  .responsivemenu,
+  .searchSection {
+    display: inline-flex;
+    font-size: 1.2rem;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .container {
+    padding: 0 1rem;
+  }
+
+  .navItemSection,
+  .dropdownSection {
+    display: none;
+  }
+
+  .responsivemenu,
+  .searchSection {
+    display: inline-flex;
+    font-size: 1.2rem;
+  }
+}
