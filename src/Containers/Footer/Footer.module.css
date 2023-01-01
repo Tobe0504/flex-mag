@@ -104,6 +104,37 @@
   font-size: 16px;
 }
 
+@media screen and (min-width: 767px) and (max-width: 1023px) {
+  .topContainer {
+    flex-direction: column;
+    gap: 20px;
+    padding: 3.5rem 2rem;
+  }
+
+  .topContainer > div {
+    width: 100%;
+  }
+
+  .bottomContainer {
+    padding: 1.2rem 2rem;
+    flex-direction: column;
+  }
+
+  .leftSection {
+    display: flex;
+    gap: 16px;
+    font-size: 14px;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    width: 100%;
+  }
+
+  .rightSection {
+    margin-top: 2rem;
+    font-size: 14px;
+  }
+}
+
 @media screen and (max-width: 767px) {
   .topContainer {
     flex-direction: column;

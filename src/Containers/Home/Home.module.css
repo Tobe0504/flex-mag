@@ -1,0 +1,25 @@
+.container {
+  border: 2px solid green;
+  padding: 1.5rem 5%;
+}
+
+.bodyMain {
+  border: 2px solid red;
+  display: flex;
+  align-items: flex-start;
+  margin-top: 1.5rem;
+}
+
+.bodyMain > div {
+  height: 100%;
+}
+
+.bodyMain > div:nth-child(1),
+.bodyMain > div:nth-child(3) {
+  width: 335px;
+  border: 2px solid red;
+}
+
+.bodyMain > div:nth-child(2) {
+  width: 100%;
+}

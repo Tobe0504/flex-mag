@@ -1,12 +1,12 @@
 import "./App.css";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import Layout from "./Components/Layout/Layout";
+import Home from "./Containers/Home/Home";
 
 function App() {
   return (
     <Router>
       <Routes>
-        <Route path="/" element={<Layout />} />
+        <Route path="/" element={<Home />} />
       </Routes>
     </Router>
   );
