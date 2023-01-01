@@ -19,6 +19,7 @@
   line-height: 21px;
   border-bottom: 2px solid #ef2339;
   color: #ffffff;
+  position: relative;
 }
 
 .logoSection,
@@ -28,6 +29,12 @@
 
 .navItemSection {
   align-self: stretch;
+  justify-content: center;
+  height: 100%;
+  position: absolute;
+  left: 0;
+  right: 0;
+  margin: auto;
 }
 
 .logosection {

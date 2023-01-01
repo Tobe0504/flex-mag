@@ -39,4 +39,51 @@ export const news = [
     header:
       "ICYMI: Venus looks for a 'fair' battle against Serena, the Mets help Raonic",
   },
+  {
+    id: v4(),
+    category: "Tennis",
+    header:
+      "ICYMI: Venus looks for a 'fair' battle against Serena, the Mets help Raonic",
+  },
+  {
+    id: v4(),
+    category: "Tennis",
+    header:
+      "ICYMI: Venus looks for a 'fair' battle against Serena, the Mets help Raonic",
+  },
+  {
+    id: v4(),
+    category: "Tennis",
+    header:
+      "ICYMI: Venus looks for a 'fair' battle against Serena, the Mets help Raonic",
+  },
+  {
+    id: v4(),
+    category: "Tennis",
+    header:
+      "ICYMI: Venus looks for a 'fair' battle against Serena, the Mets help Raonic",
+  },
+  {
+    id: v4(),
+    category: "Tennis",
+    header:
+      "ICYMI: Venus looks for a 'fair' battle against Serena, the Mets help Raonic",
+  },
+  {
+    id: v4(),
+    category: "NBA",
+    header: "Ginobili-less Spurs add depth with signing of Pondexter",
+  },
+  {
+    id: v4(),
+    category: "Tennis",
+    header:
+      "ICYMI: Venus looks for a 'fair' battle against Serena, the Mets help Raonic",
+  },
+  {
+    id: v4(),
+    category: "Tennis",
+    header:
+      "ICYMI: Venus looks for a 'fair' battle against Serena, the Mets help Raonic",
+  },
 ];

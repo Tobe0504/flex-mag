@@ -1,0 +1,53 @@
+.header {
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 17px;
+  color: #ffffff;
+  background: #001a43;
+  border-radius: 2px;
+  padding: 10px;
+}
+
+.leagueTableNav {
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 17px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  padding: 1rem;
+  user-select: none;
+}
+
+.leagueTableNav > span:nth-child(1),
+.leagueTableNav > span:nth-child(3) {
+  cursor: pointer;
+}
+
+.tableHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 17px;
+  color: #ef2339;
+  margin: 0.5rem 0;
+}
+
+.standings {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 17px;
+}
+
+.standings > div:nth-child(1) {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 0.5rem 0;
+}
