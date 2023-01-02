@@ -16,7 +16,7 @@ const Header = () => {
         <img src={flexmagLogo} alt="FlexMag Logo" />
       </div>
       <div className={classes.navItemSection}>
-        {navItems.map((data) => {
+        {navItems.map((data, i) => {
           return (
             <Link
               key={data.id}
@@ -30,6 +30,7 @@ const Header = () => {
               {window.location.href.includes(data.route) && (
                 <div className={classes.activeIndicator}></div>
               )}
+
               <div className={classes.navItem}>
                 <div>{data.icon}</div>
                 <div>{data.title}</div>

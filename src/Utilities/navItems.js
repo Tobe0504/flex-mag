@@ -5,7 +5,7 @@ export const navItems = [
     id: v4(),
     title: "HOME",
     isActive: false,
-    route: "/",
+    route: "/home",
   },
   {
     id: v4(),

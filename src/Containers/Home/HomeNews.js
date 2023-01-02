@@ -10,13 +10,7 @@ const HomeNews = () => {
         return (
           <div className={classes.news} key={data.id}>
             <div>
-              <Skeleton
-                variant="rectangular"
-                width="100%"
-                height={"100%"}
-                style={{ width: "100%" }}
-                style={{ background: "#E5E8EC" }}
-              />
+              <Skeleton variant="rectangular" width="100%" height={"100%"} />
             </div>
             <div className={classes.newsTextCenter}>
               <div>{data.category}</div>
