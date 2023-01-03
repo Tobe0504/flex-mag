@@ -2,11 +2,13 @@ import React from "react";
 import { useParams } from "react-router-dom";
 import Layout from "../../Components/Layout/Layout";
 import { news } from "../../Utilities/news";
+import BlogCategoriesAndTags from "./BlogCategoriesAndTags";
 import BlogContainerAd from "./BlogContainerAd";
 import BlogContent from "./BlogContent";
 import BlogPostCommentSection from "./BlogPostCommentSection";
 import classes from "./BlogPostContainer.module.css";
 import BlogPostImageAndHeader from "./BlogPostImageAndHeader";
+import BlogPostPopularPosts from "./BlogPostPopularPosts";
 
 const BlogPostContainer = () => {
   // Params
@@ -29,7 +31,10 @@ const BlogPostContainer = () => {
                     <BlogContent datum={datum} />
                     <BlogPostCommentSection datum={datum} />
                   </div>
-                  <div className={classes.popularNews}></div>
+                  <div className={classes.popularNews}>
+                    <BlogPostPopularPosts />
+                    <BlogCategoriesAndTags datum={datum} />
+                  </div>
                 </div>
               </div>
             </div>

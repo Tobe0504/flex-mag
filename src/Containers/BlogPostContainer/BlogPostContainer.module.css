@@ -3,10 +3,10 @@
 }
 
 .blogContentSection {
-  border: 2px solid yellow;
   display: flex;
   align-items: flex-start;
   margin-top: 2rem;
+  gap: 4rem;
 }
 
 .blogContent {
@@ -15,7 +15,6 @@
 }
 
 .popularNews {
-  border: 2px solid red;
   width: 400px;
   height: 100%;
 }
