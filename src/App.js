@@ -7,6 +7,7 @@ import {
 } from "react-router-dom";
 import Home from "./Containers/Home/Home";
 import Layout from "./Components/Layout/Layout";
+import BlogPostContainer from "./Containers/BlogPostContainer/BlogPostContainer";
 
 function App() {
   return (
@@ -20,6 +21,7 @@ function App() {
         <Route path="/soccer" element={<Layout />} />
         <Route path="/nba" element={<Layout />} />
         <Route path="/shop" element={<Layout />} />
+        <Route path="/home/:id" element={<BlogPostContainer />} />
       </Routes>
     </Router>
   );

@@ -1,0 +1,107 @@
+.socialSections {
+  display: flex;
+  align-items: stretch;
+  margin: 3rem 0;
+}
+
+.detailSection {
+  width: 30%;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.detailSection > div:nth-child(1) > img {
+  height: 55px;
+  width: 55px;
+  border-radius: 50%;
+}
+
+.detailSection > div:nth-child(2) > div:nth-child(1) {
+  font-size: 16px;
+  line-height: 25px;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  color: #2b2b2b;
+}
+
+.detailSection > div:nth-child(2) > div:nth-child(2) {
+  font-weight: 300;
+  font-size: 16px;
+  line-height: 20px;
+  letter-spacing: 0.5px;
+  color: #2b2b2b;
+}
+
+.socialIconSection {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  width: 40%;
+  border-left: 1px solid #979797;
+}
+
+.commentCount,
+.shareCount {
+  justify-content: center;
+  width: 15%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  border-left: 1px solid #979797;
+}
+
+.commentCount > div:nth-child(1),
+.shareCount > div:nth-child(1) {
+  font-weight: 500;
+  font-size: 24px;
+  line-height: 29px;
+  text-align: center;
+  text-transform: uppercase;
+  color: #000000;
+}
+
+.commentCount > div:nth-child(2),
+.shareCount > div:nth-child(2) {
+  font-weight: 300;
+  font-size: 16px;
+  line-height: 20px;
+  letter-spacing: 0.5px;
+  color: #2b2b2b;
+}
+
+.textSection {
+  margin-bottom: 1rem;
+}
+
+.paragraphs {
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 25px;
+  color: #2b2b2b;
+  margin-bottom: 2rem;
+}
+
+.quote {
+  font-weight: 600;
+  font-size: 24px;
+  line-height: 40px;
+  color: #2b2b2b;
+  margin-bottom: 3rem;
+}
+
+.imageContainer {
+  margin-bottom: 3em;
+}
+
+.imageContainer > img {
+  width: 100%;
+}
+
+.socialAlt {
+  border-left: none;
+  justify-content: space-between;
+  width: 30%;
+  padding-right: 1.5rem;
+}
