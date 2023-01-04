@@ -9,7 +9,7 @@ const BlogPostCommentSection = ({ datum }) => {
       <div className={classes.commentContainer}>
         {datum.comments.map((comment) => {
           return (
-            <div className={classes.comment}>
+            <div className={classes.comment} key={comment.id}>
               <div>
                 <img src={ovalProfileImage} alt={comment.by} />
               </div>
