@@ -2,7 +2,7 @@
   "name": "flexmag-web",
   "version": "0.1.0",
   "private": true,
-  "proxy": "http://football.api.press.net/v1.5/",
+  "proxy": "https://explore.pa.media",
   "dependencies": {
     "@emotion/react": "^11.10.5",
     "@emotion/styled": "^11.10.5",
