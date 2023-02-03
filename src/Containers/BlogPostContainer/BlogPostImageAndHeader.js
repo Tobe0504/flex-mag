@@ -6,23 +6,14 @@ const BlogPostImageAndHeader = ({ datum }) => {
   return (
     <div className={classes.container}>
       <div className={classes.postImage}>
-        <div className={classes.skeleton}>
-          <Skeleton
-            variant="rectangular"
-            width={"100%"}
-            height={100}
-            style={{
-              background: "#E5E8EC",
-              height: "90vh",
-            }}
-          />
-        </div>
+        <img src={datum.associations.featureimage.renditions.original.href} />
+
         <div className={classes.filterOverlay}></div>
         <div className={classes.textSection}>
           <div className={classes.textInner}>
-            <div>{datum.category}</div>
-            <div>{datum.header}</div>
-            <div>{datum.previewText}</div>
+            <div>{datum.subject[1].name}</div>
+            <div>{datum.headline}</div>
+            <div>{datum.description_text}</div>
           </div>
         </div>
       </div>

@@ -2,8 +2,11 @@ import React from "react";
 import classes from "./BlogContent.module.css";
 import ovalProfileImage from "../../Assets/Images/ovalProfileImage.svg";
 import { SocialIcon } from "react-social-icons";
+import moment from "moment";
 
 const BlogContent = ({ datum }) => {
+  console.log(datum.firstcreated);
+  const datefromNow = moment(datum.firstcreated, "YYYYMMDD").fromNow();
   return (
     <div className={classes.container}>
       <div className={classes.socialSections}>
@@ -12,8 +15,8 @@ const BlogContent = ({ datum }) => {
             <img src={ovalProfileImage} alt="Author" />
           </div>
           <div>
-            <div>{datum.author}</div>
-            <div>8 mins ago</div>
+            <div>{datum.byline}</div>
+            <div>{datefromNow}</div>
           </div>
         </div>
         <div className={classes.socialIconSection}>
@@ -39,27 +42,27 @@ const BlogContent = ({ datum }) => {
           />
         </div>
         <div className={classes.commentCount}>
-          <div>{datum.comments.length}</div>
+          <div>{10}</div>
           <div>COMMENTS</div>
         </div>
         <div className={classes.shareCount}>
-          {datum.shareCount ? <div>{datum.shareCount}</div> : <div>0</div>}
+          {<div>0</div>}
           <div>SHARES</div>
         </div>
       </div>
       <div className={classes.textSection}>
-        {datum.paragraphs.map((paragraph, i) => {
+        {datum.body_text.split("\n").map((paragraph, i) => {
           return (
-            <div className={classes.paragraph} key={paragraph.id}>
-              <div className={classes.paragraphs}>{paragraph.content}</div>
-              {paragraph.quotes && (
+            <div className={classes.paragraph} key={i}>
+              <div className={classes.paragraphs}>{paragraph}</div>
+              {/* {paragraph.quotes && (
                 <div className={classes.quote}>{`"${paragraph.quotes}"`}</div>
-              )}
-              {paragraph.images && (
+              )} */}
+              {/* {paragraph.images && (
                 <div className={classes.imageContainer}>
                   <img src={paragraph.images} alt={`Paragraph${i + 1}`} />
                 </div>
-              )}
+              )} */}
             </div>
           );
         })}
@@ -88,7 +91,7 @@ const BlogContent = ({ datum }) => {
           />
         </div>
         <div className={classes.commentCount}>
-          <div>{datum.comments.length}</div>
+          <div>{10}</div>
           <div>COMMENTS</div>
         </div>
         <div className={classes.shareCount}>

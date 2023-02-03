@@ -6,12 +6,7 @@ import classes from "./Layout.module.css";
 
 const Layout = (props) => {
   // Context
-  const { fetchCompetition } = useContext(AppContext);
 
-  // Effect
-  useEffect(() => {
-    fetchCompetition();
-  });
   return (
     <div className={classes.container}>
       <div className={classes.header}>

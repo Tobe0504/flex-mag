@@ -3,6 +3,14 @@
   position: relative;
 }
 
+.postImage > img {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  object-position: center center;
+  position: relative;
+}
+
 .filterOverlay {
   position: absolute;
   width: 100%;

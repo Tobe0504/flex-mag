@@ -1,6 +1,7 @@
-import React from "react";
+import React, { useContext } from "react";
 import { useParams } from "react-router-dom";
 import Layout from "../../Components/Layout/Layout";
+import { AppContext } from "../../Context/AppContext";
 import { news } from "../../Utilities/news";
 import BlogCategoriesAndTags from "./BlogCategoriesAndTags";
 import BlogContainerAd from "./BlogContainerAd";
@@ -14,13 +15,16 @@ const BlogPostContainer = () => {
   // Params
   const { id } = useParams();
 
+  // Context
+  const { isSendingRequest, headlines } = useContext(AppContext);
+
   return (
     <Layout>
-      {news
+      {headlines
         .filter((data) => {
-          return data.id === id;
+          return data.uri === id;
         })
-        .map((datum) => {
+        ?.map((datum) => {
           return (
             <div className={classes.container} key={datum.id}>
               <BlogPostImageAndHeader datum={datum} />
@@ -29,11 +33,11 @@ const BlogPostContainer = () => {
                 <div className={classes.blogContentSection}>
                   <div className={classes.blogContent}>
                     <BlogContent datum={datum} />
-                    <BlogPostCommentSection datum={datum} />
+                    {/* <BlogPostCommentSection datum={datum} /> */}
                   </div>
                   <div className={classes.popularNews}>
                     <BlogPostPopularPosts />
-                    <BlogCategoriesAndTags datum={datum} />
+                    {/* <BlogCategoriesAndTags datum={datum} /> */}
                   </div>
                 </div>
               </div>

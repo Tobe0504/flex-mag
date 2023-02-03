@@ -11,12 +11,19 @@
 
 .news > div:nth-child(1) {
   height: 224px;
-  width: 223px;
+  width: 324px;
   border-radius: 3px;
 }
 
+.news > div:nth-child(1) > img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center center;
+}
+
 .newsTextCenter {
-  width: 70%;
+  width: 100%;
 }
 
 .newsTextCenter > div:nth-child(1) {
@@ -41,6 +48,15 @@
   font-size: 16px;
   line-height: 21px;
   color: #333333;
+}
+
+.readMore {
+  text-align: center;
+  font-weight: 600;
+  font-size: 14px;
+  cursor: pointer;
+  margin: 2rem 0;
+  color: var(--backGroundBlue);
 }
 
 @media screen and (max-width: 767px) {
