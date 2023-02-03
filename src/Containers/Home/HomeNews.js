@@ -1,5 +1,4 @@
 import React, { useEffect } from "react";
-import { news } from "../../Utilities/news";
 import classes from "./HomeNews.module.css";
 import { Skeleton } from "@mui/material";
 import { useNavigate } from "react-router-dom";
@@ -14,12 +13,14 @@ const HomeNews = () => {
     isSendingRequest,
     headlines,
     fetchPopularStories,
+    fetchStoryContent,
   } = useContext(AppContext);
 
   // Effect
   useEffect(() => {
     fetchAllHeadlines();
     fetchPopularStories();
+    // eslint-disable-next-line
   }, []);
 
   // Navigate
@@ -83,7 +84,6 @@ const HomeNews = () => {
             const headlineImage = Object.values(
               data.associations.featureimage.renditions
             );
-            // console.log(headlineImage, "Haha");
             return (
               <div
                 className={classes.news}
@@ -91,6 +91,7 @@ const HomeNews = () => {
                 onClick={() => {
                   navigate(`/home/${data.uri}`);
                   scrollToTop();
+                  fetchStoryContent(data.uri);
                 }}
               >
                 <div>

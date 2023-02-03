@@ -1,0 +1,111 @@
+.container {
+  margin: 7rem 0;
+}
+
+.header {
+  font-weight: 400;
+  font-size: 30px;
+  line-height: 34px;
+  text-align: center;
+  color: #2b2b2b;
+  margin: 2.5rem 0;
+}
+
+.comment {
+  display: flex;
+  align-items: flex-start;
+  gap: 18px;
+  margin-bottom: 3rem;
+}
+
+.commenttext > div:nth-child(1) {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  margin-bottom: 1rem;
+}
+
+.commenttext > div:nth-child(1) > div:nth-child(1) {
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 25px;
+  text-transform: uppercase;
+  color: #000000;
+  mix-blend-mode: normal;
+  opacity: 0.7;
+}
+
+.commenttext > div:nth-child(1) > div:nth-child(2) {
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 15px;
+  color: #878787;
+}
+
+.commenttext > div:nth-child(2) {
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 25px;
+  color: #000000;
+  mix-blend-mode: normal;
+  opacity: 0.8;
+}
+
+.comment > div:nth-child(1) > img {
+  height: 55px;
+  width: 55px;
+  border-radius: 50%;
+}
+
+.inputSection {
+  display: flex;
+  align-items: flex-start;
+  gap: 18px;
+}
+
+.inputSection > div:nth-child(1) {
+  width: 60px;
+}
+
+.inputSection > div:nth-child(2) {
+  width: 100%;
+}
+
+.inputSection > div:nth-child(2) > textarea {
+  width: 100%;
+  resize: none;
+  height: 80px;
+  border: 1px solid #e5e5e5;
+  font-size: 14px;
+  line-height: 17px;
+  padding: 10px 20px;
+  font-family: "Montserrat";
+  font-style: normal;
+  outline: none;
+}
+
+.inputSection > div:nth-child(2) > textarea::placeholder {
+  font-size: 14px;
+  line-height: 17px;
+  color: #999999;
+  font-family: "Montserrat";
+  font-style: normal;
+}
+
+.buttonSection {
+  text-align: right;
+  margin-top: 10px;
+}
+
+.buttonSection > button {
+  font-weight: 700;
+  font-size: 12px;
+  line-height: 25px;
+  letter-spacing: 1.09091px;
+  text-transform: uppercase;
+  color: #ffffff;
+  padding: 0.5rem 2rem;
+  background: #001a43;
+  mix-blend-mode: normal;
+  cursor: pointer;
+}

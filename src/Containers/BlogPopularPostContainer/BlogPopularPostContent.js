@@ -1,10 +1,10 @@
 import React from "react";
-import classes from "./BlogContent.module.css";
+import classes from "./BlogPopularPostContent.module.css";
 import ovalProfileImage from "../../Assets/Images/ovalProfileImage.svg";
 import { SocialIcon } from "react-social-icons";
 import moment from "moment";
 
-const BlogContent = ({ datum }) => {
+const BlogPopularPostContent = ({ datum }) => {
   const datefromNow = moment(datum.firstcreated, "YYYYMMDD").fromNow();
   return (
     <div className={classes.container}>
@@ -102,4 +102,4 @@ const BlogContent = ({ datum }) => {
   );
 };
 
-export default BlogContent;
+export default BlogPopularPostContent;

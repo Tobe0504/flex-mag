@@ -1,7 +1,6 @@
-import React, { useContext, useEffect } from "react";
+import React from "react";
 import Footer from "../../Containers/Footer/Footer";
 import Header from "../../Containers/Header/Header";
-import { AppContext } from "../../Context/AppContext";
 import classes from "./Layout.module.css";
 
 const Layout = (props) => {

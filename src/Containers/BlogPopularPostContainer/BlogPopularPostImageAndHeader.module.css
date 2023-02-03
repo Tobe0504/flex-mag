@@ -1,0 +1,84 @@
+.postImage {
+  height: 90vh;
+  position: relative;
+}
+
+.postImage > img {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  object-position: center center;
+  position: relative;
+}
+
+.filterOverlay {
+  position: absolute;
+  width: 100%;
+  top: 0;
+  bottom: 0;
+  background: linear-gradient(
+      0deg,
+      rgba(51, 51, 51, 0.2),
+      rgba(51, 51, 51, 0.2)
+    ),
+    linear-gradient(
+      180.13deg,
+      rgba(0, 0, 0, 0) 77.07%,
+      rgba(0, 0, 0, 0.7) 99.89%
+    ),
+    url("https://www.google.com/imgres?imgurl=https%3A%2F%2Fe0.365dm.com%2F21%2F05%2F2048x1152%2Fskysports-zinedine-zidane-real-madrid_5400870.jpg&imgrefurl=https%3A%2F%2Fwww.skysports.com%2Ffootball%2Fnews%2F11835%2F12321362%2Fzinedine-zidane-says-real-madrids-lack-of-faith-led-to-his-departure&tbnid=zsLwxwqC20TuwM&vet=12ahUKEwjzlumirqf8AhUraqQEHWDNBtIQMygFegUIARDgAQ..i&docid=Xd3vabrJvea0mM&w=2048&h=1152&q=zidane%20pictures&ved=2ahUKEwjzlumirqf8AhUraqQEHWDNBtIQMygFegUIARDgAQ");
+  border-radius: 3px;
+  z-index: 1;
+}
+
+.textSection {
+  position: absolute;
+  width: 100%;
+  top: 0;
+  bottom: 18px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  flex-direction: column;
+  z-index: 2;
+  padding: 0 21px;
+}
+
+.textInner {
+  width: 80%;
+}
+
+.textInner {
+  margin-bottom: 4rem;
+}
+
+.textInner > div:nth-child(1) {
+  font-weight: 800;
+  font-size: 14px;
+  line-height: 17px;
+  text-transform: capitalize;
+  color: #ffffff;
+  background: #ef2339;
+  border-radius: 3px;
+  padding: 5px 0.5rem;
+  display: inline;
+  margin-bottom: 0.5rem;
+}
+
+.textInner > div:nth-child(2) {
+  font-weight: 800;
+  font-size: 48px;
+  line-height: 59px;
+  text-transform: capitalize;
+  color: #ffffff;
+  width: 100%;
+  margin: 0.5rem 0;
+}
+
+.textInner > div:nth-child(3) {
+  font-weight: 400;
+  font-size: 24px;
+  line-height: 32px;
+  color: #ffffff;
+  margin-top: 1em;
+}

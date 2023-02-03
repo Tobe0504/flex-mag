@@ -1,9 +1,12 @@
 import React from "react";
-import { news } from "../../Utilities/news";
 import classes from "./BlogPostPopularPosts.module.css";
-import { Skeleton } from "@mui/material";
+// import { Skeleton } from "@mui/material";
+import { useNavigate } from "react-router-dom";
 
-const BlogPostPopularPosts = ({ datum }) => {
+const BlogPostPopularPosts = (props) => {
+  // Navigagte
+  const navigate = useNavigate();
+
   return (
     <div className={classes.container}>
       <div className={classes.header}>
@@ -11,31 +14,31 @@ const BlogPostPopularPosts = ({ datum }) => {
         <div>Popular News</div>
       </div>
       <div className={classes.postContainer}>
-        {news
-          .filter((data) => {
-            return data.isPolular;
-          })
-          .map((datum) => {
-            return (
-              <div className={classes.popularPost} key={datum.id}>
-                <div className={classes.pictureSection}>
-                  <Skeleton
-                    variant="rectangular"
-                    width={"100%"}
-                    height={192}
-                    style={{
-                      background: "#E5E8EC",
-                    }}
-                  />
-                </div>
-                <div className={classes.textSection}>
-                  <div>{datum.category}</div>
-                  <div>{datum.header}</div>
-                </div>
-                <hr />
+        {props?.popularStories.slice(0, 7).map((datum) => {
+          return (
+            <div
+              className={classes.popularPost}
+              key={datum.uri}
+              onClick={() => {
+                navigate(`/home/popular/${datum.uri}`);
+              }}
+            >
+              <div className={classes.pictureSection}>
+                <img
+                  src={
+                    datum?.associations.featureimage.renditions.original.href
+                  }
+                  alt={datum?.associations.featureimage.description_text}
+                />
               </div>
-            );
-          })}
+              <div className={classes.textSection}>
+                <div>{datum?.subject[1].name}</div>
+                <div>{datum?.headline}</div>
+              </div>
+              <hr />
+            </div>
+          );
+        })}
       </div>
     </div>
   );

@@ -1,6 +1,5 @@
 import axios from "axios";
 import React, { createContext, useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
 
 export const AppContext = createContext();
 
@@ -13,9 +12,12 @@ const AppContextProvider = (props) => {
   const [isSendingRequest, setIsSendingRequest] = useState(false);
   const [error, setError] = useState("");
   const [popularStories, setPopularStories] = useState([]);
+  const [isLoadingPopularStories, setIsLoadingPopularStories] = useState(false);
+  const [activeContent, setActiveContent] = useState([]);
+
+  // Utils
 
   // Params
-  // const { id } = useParams();
 
   if (offsetValue > 100) {
     setOffsetValue(0);
@@ -25,56 +27,72 @@ const AppContextProvider = (props) => {
     setIsSendingRequest(true);
     axios
       .get(
-        `https://content.api.pressassociation.io/v1/item?sort=issued:desc&sort=uri:asc&limit=20&offset=${offsetValue}&fields=total,limit,offset,item(uri,headline,subject,associations,description_text,subject/name,body_text,byline,firstcreated)`,
+        `${process.env.REACT_APP_PA_API_DOMAIN}/v1/item?sort=issued:desc&sort=uri:asc&limit=20&offset=${offsetValue}&fields=total,limit,offset,item(uri,headline,subject,associations,description_text,subject/name,body_text,byline,firstcreated)`,
         {
           headers: {
-            apikey: "bba83rkvzevyy764bk9fu3e2",
+            apikey: process.env.REACT_APP_PA_API_KEY,
             Accept: "application/json",
           },
         }
       )
       .then((res) => {
-        console.log(res);
         setHeadlines(res.data.item);
+        console.log(res, "psst");
         setIsSendingRequest(false);
       })
       .catch((err) => {
-        console.log(err);
+        // console.log(err);
         setIsSendingRequest(false);
         setError(err.message);
       });
   };
 
-  useEffect(() => {
-    fetchAllHeadlines();
-    // eslint-disable-next-line
-  }, [offsetValue]);
-
   const fetchPopularStories = () => {
-    setIsSendingRequest(true);
+    setIsLoadingPopularStories(true);
     axios
       .get(
-        `https://content.api.pressassociation.io/v1/item?sort=issued:asc&sort=firstcreated:desc&limit=10&start=now-24h`,
+        `${process.env.REACT_APP_PA_API_DOMAIN}/v1/item?sort=issued:asc&sort=firstcreated:desc&limit=20&start=now-24h`,
         {
           headers: {
-            apikey: "bba83rkvzevyy764bk9fu3e2",
+            apikey: process.env.REACT_APP_PA_API_KEY,
             Accept: "application/json",
           },
         }
       )
       .then((res) => {
-        console.log(res, "popular");
         setPopularStories(res.data.item);
-        setIsSendingRequest(false);
+        setIsLoadingPopularStories(false);
       })
       .catch((err) => {
-        console.log(err);
+        // console.log(err);
+        setIsLoadingPopularStories(false);
       });
   };
 
-  // useEffect(() => {
-  //   getBodyContent();
-  // }, [id]);
+  useEffect(() => {
+    fetchAllHeadlines();
+    fetchPopularStories();
+    // eslint-disable-next-line
+  }, [offsetValue]);
+
+  const fetchStoryContent = (id) => {
+    setIsLoadingPopularStories(true);
+    axios
+      .get(`${process.env.REACT_APP_PA_API_DOMAIN}/v1/item/${id}`, {
+        headers: {
+          apikey: process.env.REACT_APP_PA_API_KEY,
+          Accept: "application/json",
+        },
+      })
+      .then((res) => {
+        console.log(res, "roarr");
+        setIsLoadingPopularStories(false);
+      })
+      .catch((err) => {
+        console.log(err);
+        setIsLoadingPopularStories(false);
+      });
+  };
 
   return (
     <AppContext.Provider
@@ -92,6 +110,13 @@ const AppContextProvider = (props) => {
         popularStories,
         setPopularStories,
         fetchPopularStories,
+        isLoadingPopularStories,
+        setIsLoadingPopularStories,
+        error,
+        setError,
+        fetchStoryContent,
+        activeContent,
+        setActiveContent,
       }}
     >
       {props.children}

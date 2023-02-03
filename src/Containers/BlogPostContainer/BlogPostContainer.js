@@ -2,11 +2,10 @@ import React, { useContext } from "react";
 import { useParams } from "react-router-dom";
 import Layout from "../../Components/Layout/Layout";
 import { AppContext } from "../../Context/AppContext";
-import { news } from "../../Utilities/news";
-import BlogCategoriesAndTags from "./BlogCategoriesAndTags";
+// import BlogCategoriesAndTags from "./BlogCategoriesAndTags";
 import BlogContainerAd from "./BlogContainerAd";
 import BlogContent from "./BlogContent";
-import BlogPostCommentSection from "./BlogPostCommentSection";
+// import BlogPostCommentSection from "./BlogPostCommentSection";
 import classes from "./BlogPostContainer.module.css";
 import BlogPostImageAndHeader from "./BlogPostImageAndHeader";
 import BlogPostPopularPosts from "./BlogPostPopularPosts";
@@ -16,7 +15,7 @@ const BlogPostContainer = () => {
   const { id } = useParams();
 
   // Context
-  const { isSendingRequest, headlines } = useContext(AppContext);
+  const { headlines, popularStories } = useContext(AppContext);
 
   return (
     <Layout>
@@ -26,7 +25,7 @@ const BlogPostContainer = () => {
         })
         ?.map((datum) => {
           return (
-            <div className={classes.container} key={datum.id}>
+            <div className={classes.container} key={datum.uri}>
               <BlogPostImageAndHeader datum={datum} />
               <div className={classes.bodyMain}>
                 <BlogContainerAd />
@@ -36,7 +35,7 @@ const BlogPostContainer = () => {
                     {/* <BlogPostCommentSection datum={datum} /> */}
                   </div>
                   <div className={classes.popularNews}>
-                    <BlogPostPopularPosts />
+                    <BlogPostPopularPosts popularStories={popularStories} />
                     {/* <BlogCategoriesAndTags datum={datum} /> */}
                   </div>
                 </div>

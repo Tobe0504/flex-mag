@@ -1,7 +1,7 @@
 import React from "react";
-import classes from "./BlogPostImageAndHeader.module.css";
+import classes from "./BlogPopularPostImageAndHeader.module.css";
 
-const BlogPostImageAndHeader = ({ datum }) => {
+const BlogPopularPostImageAndHeader = ({ datum }) => {
   return (
     <div className={classes.container}>
       <div className={classes.postImage}>
@@ -9,7 +9,6 @@ const BlogPostImageAndHeader = ({ datum }) => {
           src={datum.associations.featureimage.renditions.original.href}
           alt={datum.associations.featureimage.description_text}
         />
-
         <div className={classes.filterOverlay}></div>
         <div className={classes.textSection}>
           <div className={classes.textInner}>
@@ -23,4 +22,4 @@ const BlogPostImageAndHeader = ({ datum }) => {
   );
 };
 
-export default BlogPostImageAndHeader;
+export default BlogPopularPostImageAndHeader;

@@ -9,6 +9,7 @@ import Home from "./Containers/Home/Home";
 import Layout from "./Components/Layout/Layout";
 import BlogPostContainer from "./Containers/BlogPostContainer/BlogPostContainer";
 import SearchResultContainer from "./Containers/SearchResultContainer/SearchResultContainer";
+import BlogPopularPostContainer from "./Containers/BlogPopularPostContainer/BlogPopularPostContainer";
 
 function App() {
   return (
@@ -24,6 +25,10 @@ function App() {
         <Route path="/shop" element={<Layout />} />
         <Route path="/search" element={<SearchResultContainer />} />
         <Route path="/home/:id" element={<BlogPostContainer />} />
+        <Route
+          path="/home/popular/:popularId"
+          element={<BlogPopularPostContainer />}
+        />
       </Routes>
     </Router>
   );
