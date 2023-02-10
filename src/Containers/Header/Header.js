@@ -9,8 +9,13 @@ import { AppContext } from "../../Context/AppContext";
 
 const Header = () => {
   // Context
-  const { displaySearch, setDisplaySearch, searchQuery, setSearchQuery } =
-    useContext(AppContext);
+  const {
+    displaySearch,
+    setDisplaySearch,
+    searchQuery,
+    setSearchQuery,
+    searchHandler,
+  } = useContext(AppContext);
 
   // Ref
   const searchRef = useRef(null);
@@ -83,6 +88,11 @@ const Header = () => {
               console.log(e.target.value);
             }}
             value={searchQuery}
+            onKeyDown={(e) => {
+              if (e.key === "Enter") {
+                searchHandler(searchQuery);
+              }
+            }}
           />
         ) : (
           <i>

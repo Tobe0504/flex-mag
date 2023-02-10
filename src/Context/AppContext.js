@@ -14,6 +14,9 @@ const AppContextProvider = (props) => {
   const [popularStories, setPopularStories] = useState([]);
   const [isLoadingPopularStories, setIsLoadingPopularStories] = useState(false);
   const [activeContent, setActiveContent] = useState([]);
+  const [searchResults, setSearchResults] = useState([]);
+  const [searchOffsetValue, setSearchOffsetValue] = useState(0);
+  const [newsBodyContent, setNewsBodyContent] = useState([]);
 
   // Utils
 
@@ -27,7 +30,7 @@ const AppContextProvider = (props) => {
     setIsSendingRequest(true);
     axios
       .get(
-        `${process.env.REACT_APP_PA_API_DOMAIN}/v1/item?sort=issued:desc&sort=uri:asc&limit=20&offset=${offsetValue}&fields=total,limit,offset,item(uri,headline,subject,associations,description_text,subject/name,body_text,byline,firstcreated)`,
+        `${process.env.REACT_APP_PA_API_DOMAIN}/v1/item?sort=issued:desc&sort=uri:asc&limit=20&offset=${offsetValue}&fields=total,limit,offset,item(uri,headline,subject,associations,description_text,subject,body_text,byline,firstcreated)`,
         {
           headers: {
             apikey: process.env.REACT_APP_PA_API_KEY,
@@ -78,12 +81,15 @@ const AppContextProvider = (props) => {
   const fetchStoryContent = (id) => {
     setIsLoadingPopularStories(true);
     axios
-      .get(`${process.env.REACT_APP_PA_API_DOMAIN}/v1/item/${id}`, {
-        headers: {
-          apikey: process.env.REACT_APP_PA_API_KEY,
-          Accept: "application/json",
-        },
-      })
+      .get(
+        `${process.env.REACT_APP_PA_API_DOMAIN}/v1/item/${id}sort=issued:desc&sort=uri:asc`,
+        {
+          headers: {
+            apikey: process.env.REACT_APP_PA_API_KEY,
+            Accept: "application/json",
+          },
+        }
+      )
       .then((res) => {
         console.log(res, "roarr");
         setIsLoadingPopularStories(false);
@@ -93,6 +99,82 @@ const AppContextProvider = (props) => {
         setIsLoadingPopularStories(false);
       });
   };
+
+  const fetchParticularNewsContent = (uri) => {
+    setNewsBodyContent({});
+    setIsSendingRequest(true);
+    axios
+      .get(
+        `https://content.api.pressassociation.io/v1/item/${uri}?fields=uri,headline,subject,associations,description_text,subject,body_text,byline,firstcreated`,
+        {
+          headers: {
+            apikey: process.env.REACT_APP_PA_API_KEY,
+            Accept: "application/json",
+          },
+        }
+      )
+      .then((res) => {
+        setNewsBodyContent(res.data);
+        console.log(res, "content");
+        setIsSendingRequest(false);
+      })
+      .catch((err) => {
+        console.log(err);
+        setIsSendingRequest(false);
+      });
+  };
+
+  const searchHandler = (searchValue) => {
+    setSearchOffsetValue(0);
+    setSearchResults([]);
+    setIsSendingRequest(true);
+    axios
+      .get(
+        `https://content.api.pressassociation.io/v1/item?subject=pakeyword:${searchValue}&limit=20&offset=${searchOffsetValue}&fields=total,limit,offset,item(uri,headline,subject,associations,description_text,subject,body_text,byline,firstcreated)`,
+        {
+          headers: {
+            apikey: process.env.REACT_APP_PA_API_KEY,
+            Accept: "application/json",
+          },
+        }
+      )
+      .then((res) => {
+        setSearchResults(res.data.item);
+        console.log(res);
+        setIsSendingRequest(false);
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  };
+
+  const tagsSearchAndCategory = (tag) => {
+    setSearchOffsetValue(0);
+    setSearchResults([]);
+    setIsSendingRequest(true);
+    axios
+      .get(
+        `https://content.api.pressassociation.io/v1/item?subject=${tag}&limit=20&offset=${searchOffsetValue}&fields=total,limit,offset,item(uri,headline,subject,associations,description_text,subject,body_text,byline,firstcreated)`,
+        {
+          headers: {
+            apikey: process.env.REACT_APP_PA_API_KEY,
+            Accept: "application/json",
+          },
+        }
+      )
+      .then((res) => {
+        setSearchResults(res.data.item);
+        console.log(res);
+        setIsSendingRequest(false);
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  };
+
+  useEffect(() => {
+    console.log(searchResults, "search results");
+  }, [searchResults]);
 
   return (
     <AppContext.Provider
@@ -117,6 +199,13 @@ const AppContextProvider = (props) => {
         fetchStoryContent,
         activeContent,
         setActiveContent,
+        tagsSearchAndCategory,
+        searchResults,
+        searchOffsetValue,
+        setSearchOffsetValue,
+        fetchParticularNewsContent,
+        newsBodyContent,
+        searchHandler,
       }}
     >
       {props.children}

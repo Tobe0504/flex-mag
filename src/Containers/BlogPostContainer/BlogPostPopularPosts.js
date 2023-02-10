@@ -1,11 +1,14 @@
-import React from "react";
+import React, { useEffect, useContext } from "react";
 import classes from "./BlogPostPopularPosts.module.css";
 // import { Skeleton } from "@mui/material";
 import { useNavigate } from "react-router-dom";
+import { AppContext } from "../../Context/AppContext";
 
 const BlogPostPopularPosts = (props) => {
   // Navigagte
   const navigate = useNavigate();
+
+  const { popularStories, isLoadingPopularStories } = useContext(AppContext);
 
   return (
     <div className={classes.container}>
@@ -14,7 +17,7 @@ const BlogPostPopularPosts = (props) => {
         <div>Popular News</div>
       </div>
       <div className={classes.postContainer}>
-        {props?.popularStories.slice(0, 7).map((datum) => {
+        {popularStories?.slice(0, 7).map((datum) => {
           return (
             <div
               className={classes.popularPost}

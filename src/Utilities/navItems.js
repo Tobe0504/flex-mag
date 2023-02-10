@@ -7,12 +7,7 @@ export const navItems = [
     isActive: false,
     route: "/home",
   },
-  {
-    id: v4(),
-    title: "NEWS",
-    isActive: false,
-    route: "/news",
-  },
+
   {
     id: v4(),
     title: "FIXTURES",
@@ -24,23 +19,5 @@ export const navItems = [
     title: "LEAUGE TABLE",
     isActive: false,
     route: "/league-table",
-  },
-  {
-    id: v4(),
-    title: "SOCCER",
-    isActive: false,
-    route: "/soccer",
-  },
-  {
-    id: v4(),
-    title: "NBA",
-    isActive: false,
-    route: "/nba",
-  },
-  {
-    id: v4(),
-    title: "SHOP",
-    isActive: false,
-    route: "/shop",
   },
 ];

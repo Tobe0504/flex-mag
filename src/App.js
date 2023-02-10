@@ -24,6 +24,8 @@ function App() {
         <Route path="/nba" element={<Layout />} />
         <Route path="/shop" element={<Layout />} />
         <Route path="/search" element={<SearchResultContainer />} />
+        <Route path="/search/:tag" element={<SearchResultContainer />} />
+
         <Route path="/home/:id" element={<BlogPostContainer />} />
         <Route
           path="/home/popular/:popularId"

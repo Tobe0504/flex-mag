@@ -14,7 +14,7 @@ const BlogPopularPostContent = ({ datum }) => {
             <img src={ovalProfileImage} alt="Author" />
           </div>
           <div>
-            <div>{datum.byline}</div>
+            <div>{datum?.byline}</div>
             <div>{datefromNow}</div>
           </div>
         </div>
@@ -50,7 +50,7 @@ const BlogPopularPostContent = ({ datum }) => {
         </div>
       </div>
       <div className={classes.textSection}>
-        {datum.body_text.split("\n").map((paragraph, i) => {
+        {datum?.body_text?.split("\n").map((paragraph, i) => {
           return (
             <div className={classes.paragraph} key={i}>
               <div className={classes.paragraphs}>{paragraph}</div>
@@ -94,7 +94,7 @@ const BlogPopularPostContent = ({ datum }) => {
           <div>COMMENTS</div>
         </div>
         <div className={classes.shareCount}>
-          {datum.shareCount ? <div>{datum.shareCount}</div> : <div>0</div>}
+          {datum.shareCount ? <div>{datum?.shareCount}</div> : <div>0</div>}
           <div>SHARES</div>
         </div>
       </div>
