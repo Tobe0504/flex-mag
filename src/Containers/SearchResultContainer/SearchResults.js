@@ -1,7 +1,5 @@
 import React, { useContext } from "react";
-import { news } from "../../Utilities/news";
 import classes from "./SearchResults.module.css";
-import searchedNewsBackground from "../../Assets/Images/searchedNewsBackground.svg";
 import { AppContext } from "../../Context/AppContext";
 import { useNavigate, useParams } from "react-router-dom";
 import { useEffect } from "react";
@@ -10,7 +8,7 @@ import { CircularProgress } from "@mui/material";
 const SearchResults = () => {
   // const
   const {
-    searchQuery,
+    // searchQuery,
     searchResults,
     tagsSearchAndCategory,
     isSendingRequest,
@@ -24,18 +22,12 @@ const SearchResults = () => {
 
   useEffect(() => {
     tagsSearchAndCategory(tag);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [searchOffsetValue]);
 
   // const searchKeys = ["category", "header", "author"];
 
   // console.log(news[0]["categories"]);
-
-  const scrollToTop = () => {
-    window.scrollTo({
-      top: 0,
-      behavior: "smooth",
-    });
-  };
 
   return (
     <div className={classes.container}>

@@ -17,7 +17,6 @@ const BlogPostContainer = () => {
 
   // Context
   const {
-    headlines,
     popularStories,
     tagsSearchAndCategory,
     fetchParticularNewsContent,
@@ -27,6 +26,7 @@ const BlogPostContainer = () => {
 
   useEffect(() => {
     fetchParticularNewsContent(id);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   let datum;

@@ -1,4 +1,4 @@
-import React, { useEffect, useContext } from "react";
+import React, { useContext } from "react";
 import classes from "./BlogPostPopularPosts.module.css";
 // import { Skeleton } from "@mui/material";
 import { useNavigate } from "react-router-dom";
@@ -8,7 +8,7 @@ const BlogPostPopularPosts = (props) => {
   // Navigagte
   const navigate = useNavigate();
 
-  const { popularStories, isLoadingPopularStories } = useContext(AppContext);
+  const { popularStories } = useContext(AppContext);
 
   return (
     <div className={classes.container}>

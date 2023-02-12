@@ -28,6 +28,7 @@ const BlogPopularPostContainer = () => {
 
   useEffect(() => {
     fetchParticularNewsContent(popularId);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   let datum;
