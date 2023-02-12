@@ -1,0 +1,20 @@
+{
+  "files": {
+    "main.css": "/flex-mag/static/css/main.6c2c8506.css",
+    "main.js": "/flex-mag/static/js/main.56d10f17.js",
+    "static/js/787.6bdf8e4e.chunk.js": "/flex-mag/static/js/787.6bdf8e4e.chunk.js",
+    "static/media/flexmagLogo.svg": "/flex-mag/static/media/flexmagLogo.c59437434b93f1ca9ff60c94d6a2ee46.svg",
+    "static/media/flexmagDarkLogo.svg": "/flex-mag/static/media/flexmagDarkLogo.93331e82827559f9c0db3ffa569e741d.svg",
+    "index.html": "/flex-mag/index.html",
+    "static/media/ovalProfileImage.svg": "/flex-mag/static/media/ovalProfileImage.f6f480f9a53b601193bb2ef4c08df209.svg",
+    "static/media/imageBackground.svg": "/flex-mag/static/media/imageBackground.25c14d7811b4b2702ce3df70eb4aa6c0.svg",
+    "static/media/searchedNewsBackground.svg": "/flex-mag/static/media/searchedNewsBackground.d7a3495585a70ac9b5e8c668ef46ffd5.svg",
+    "main.6c2c8506.css.map": "/flex-mag/static/css/main.6c2c8506.css.map",
+    "main.56d10f17.js.map": "/flex-mag/static/js/main.56d10f17.js.map",
+    "787.6bdf8e4e.chunk.js.map": "/flex-mag/static/js/787.6bdf8e4e.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.6c2c8506.css",
+    "static/js/main.56d10f17.js"
+  ]
+}
