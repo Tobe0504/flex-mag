@@ -6,7 +6,6 @@ import HomeAdSection from "./HomeAdSection";
 import HomeLiveMatches from "./HomeLiveMatches";
 import HomeNews from "./HomeNews";
 import HomeRightSectionAd from "./HomeRightSectionAd";
-import HomeTweetSection from "./HomeTweetSection";
 import LeagueTableContainer from "./LeagueTableContainer";
 import PopularNews from "./PopularNews";
 
@@ -40,9 +39,6 @@ const Home = () => {
             </div>
             <div className={classes.rightSectionAd}>
               <HomeRightSectionAd />
-            </div>
-            <div className={classes.tweetSection}>
-              <HomeTweetSection />
             </div>
           </div>
         </div>

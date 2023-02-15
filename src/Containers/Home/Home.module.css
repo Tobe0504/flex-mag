@@ -1,5 +1,5 @@
 .container {
-  padding: 1.5rem 5%;
+  /* padding: 1.5rem 5%; */
 }
 
 .bodyMain {
@@ -14,7 +14,7 @@
 
 .leftSection,
 .rightSection {
-  width: 335px;
+  width: 435px;
 }
 
 .containerMain {

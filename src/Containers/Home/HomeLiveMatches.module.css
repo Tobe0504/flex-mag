@@ -3,19 +3,42 @@
 }
 
 .matchHeader {
-  font-weight: 700;
-  font-size: 14px;
-  line-height: 17px;
-  color: #ffffff;
   background: #001a43;
   border-radius: 2px;
   padding: 10px;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.matchHeader > div:nth-child(1) > img {
+  height: 21px;
+  width: 21px;
+}
+
+.matchHeader > div:nth-child(2) > h4 {
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 18px;
+  color: #ffffff;
+}
+
+.matchHeader > div:nth-child(2) > p {
+  font-weight: 400;
+  font-size: 8px;
+  line-height: 12px;
+  display: flex;
+  align-items: center;
+  text-transform: capitalize;
+  color: #ffffff;
+  opacity: 0.5;
 }
 
 .liveMatchDetail {
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  gap: 20px;
+  padding: 0 1rem 0 2rem;
 }
 
 .liveMatchDetail > div {
@@ -26,30 +49,45 @@
   border-bottom: none;
 }
 
-.timeSection,
-.dateSection {
-  width: 25%;
-  font-weight: 700;
+.timeSection {
+  font-style: normal;
+  font-weight: 500;
   font-size: 12px;
-  line-height: 15px;
-  color: rgba(51, 51, 51, 0.6);
-  text-align: center;
-}
-
-.scoreSection {
-  width: 40%;
-  display: flex;
-  align-items: flex-end;
-  justify-content: space-between;
-  font-weight: 700;
-  font-size: 14px;
-  line-height: 17px;
-  text-align: center;
-  text-transform: uppercase;
+  line-height: 18px;
   color: #333333;
-  border-bottom: 0.5px solid rgba(51, 51, 51, 0.3);
+  opacity: 0.5;
 }
 
-.scoreSection > div > div:nth-child(2) {
-  color: #ef2338;
+.teamSection {
+  width: 100%;
+}
+
+.teamSection > div {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.teamSection > div > div:nth-child(1) > img {
+  height: 16px;
+  width: 16px;
+}
+
+.teamSection > div > div:nth-child(2) {
+  font-style: normal;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 18px;
+  text-transform: capitalize;
+  color: #333333;
+}
+
+.teamSection > div > div:nth-child(3) {
+  font-style: normal;
+  font-weight: 400;
+  font-size: 12px;
+  text-transform: capitalize;
+  color: #333333;
+  margin-left: auto;
+  color: #333333;
 }

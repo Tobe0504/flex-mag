@@ -1,44 +1,55 @@
 import React from "react";
 import classes from "./Footer.module.css";
-import flexmagLogo from "../../Assets/Images/flexmagDarkLogo.svg";
+import flexmagLogo from "../../Assets/Images/flexmagLogo.svg";
 import { Link } from "react-router-dom";
 import { v4 } from "uuid";
+import { navItems } from "../../Utilities/navItems";
 
 const Footer = () => {
-  const footerLinks = [
-    { id: v4(), title: "PRIVACY POLICY", route: "/" },
-    { id: v4(), title: "TERMS AND CONDITIONS", route: "/" },
-    { id: v4(), title: "FAQ", route: "/" },
-    { id: v4(), title: "COOKIES", route: "/" },
+  const footerNav = [
+    { id: v4(), title: "Careers", route: "/careers" },
+    { id: v4(), title: "Mobile", route: "/mobile" },
+    { id: v4(), title: "Advertise", route: "/advertise" },
+    { id: v4(), title: "News", route: "/news" },
+    { id: v4(), title: "Privacy Notice", route: "/privacy-notice" },
+    { id: v4(), title: "Cookie Policy", route: "/cookie-policy" },
+    { id: v4(), title: "Terms of use", route: "/terms-of-use" },
   ];
   return (
-    <div className={classes.container}>
-      <div className={classes.topContainer}>
-        <div>
-          <div>
-            <img src={flexmagLogo} alt="FlexMag Logo" />
-          </div>
+    <div className={classes.outerContainer}>
+      <div className={classes.container}>
+        <div className={classes.logosection}>
+          <img src={flexmagLogo} alt="SPortdm Logo" />
+        </div>
+        <div className={classes.textSection}>
+          <h6>
+            Sportdm - Latest World Cup Football Scores, Results, Fixtures and
+            Tables
+          </h6>
           <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-            eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
-            ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-            aliquip ex ea commodo consequat.
+            The number one destination for real time scores for Football,
+            Cricket, Tennis, Basketball, Hockey and more. Sportdm is the go-to
+            destination for latest football scores and news from around the
+            world.
           </p>
+          <p>
+            Up to date tables, fixtures and scores from all the major leagues
+            and competitions throughout the world live as they happen including
+            the Premier League, La Liga, Serie A, Bundesliga, Ligue 1 and
+            Europe’s biggest competitions such as the Champions League and
+            Europa League.
+          </p>
+          <p>
+            That’s not all because domestic cup competitions including the world
+            famous FA Cup and international tournaments such as the World Cup,
+            Euros, AFCON, Copa America and Nations League are also at your
+            fingertips. With match info and line-ups thrown into the mix, you
+            need not look anywhere else for football statistics.
+          </p>
+          <p>&copy; 2022 Sportdm</p>
         </div>
-        <div>
-          <h4>SUBSCRIBE TO OUR NEWSLETTER</h4>
-          <div>
-            <input type="text" placeholder="Your Email" />
-            <button>SUBSCRIBE</button>
-          </div>
-          <div>
-            Stay up to date with the latest sports news straight to your inbox
-          </div>
-        </div>
-      </div>
-      <div className={classes.bottomContainer}>
-        <div className={classes.leftSection}>
-          {footerLinks.map((data) => {
+        <div className={classes.footerNav}>
+          {footerNav.map((data) => {
             return (
               <Link to={data.route} key={data.id}>
                 {data.title}
@@ -46,9 +57,23 @@ const Footer = () => {
             );
           })}
         </div>
-        <div className={classes.rightSection}>
-          &copy; 2018 FLEX MAG. <span>All rights reserved.</span>
-        </div>
+      </div>
+      <div className={classes.mobileNav}>
+        {navItems.slice(0, 3).map((data) => {
+          return (
+            <Link
+              to={data.route}
+              className={
+                window.location.href.includes(data.route)
+                  ? `${classes.activeNav}`
+                  : undefined
+              }
+              key={data.id}
+            >
+              {data.icon}
+            </Link>
+          );
+        })}
       </div>
     </div>
   );

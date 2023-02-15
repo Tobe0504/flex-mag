@@ -1,3 +1,9 @@
+import {
+  faCalendarWeek,
+  faHome,
+  faRankingStar,
+} from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { v4 } from "uuid";
 
 export const navItems = [
@@ -6,6 +12,7 @@ export const navItems = [
     title: "HOME",
     isActive: false,
     route: "/home",
+    icon: <FontAwesomeIcon icon={faHome} />,
   },
 
   {
@@ -13,11 +20,13 @@ export const navItems = [
     title: "FIXTURES",
     isActive: false,
     route: "/fixtures",
+    icon: <FontAwesomeIcon icon={faCalendarWeek} />,
   },
   {
     id: v4(),
     title: "LEAUGE TABLE",
     isActive: false,
     route: "/league-table",
+    icon: <FontAwesomeIcon icon={faRankingStar} />,
   },
 ];

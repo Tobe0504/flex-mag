@@ -69,7 +69,7 @@ const Header = () => {
                 )}
 
                 <div className={classes.navItem}>
-                  <div>{data.icon}</div>
+                  {/* <div>{data.icon}</div> */}
                   <div>{data.title}</div>
                 </div>
               </Link>

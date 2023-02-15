@@ -1,17 +1,29 @@
 .header {
-  font-weight: 700;
+  font-style: normal;
+  font-weight: 600;
   font-size: 14px;
-  line-height: 17px;
+  line-height: 21px;
+  text-transform: capitalize;
   color: #ffffff;
   background: #001a43;
   border-radius: 2px;
   padding: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.header > h4 {
+  width: 70%;
 }
 
 .leagueTableNav {
-  font-weight: 700;
-  font-size: 14px;
-  line-height: 17px;
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 18px;
+  display: flex;
+  align-items: center;
+  text-transform: capitalize;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -23,26 +35,43 @@
 .leagueTableNav > span:nth-child(1),
 .leagueTableNav > span:nth-child(3) {
   cursor: pointer;
+  color: rgba(255, 255, 255, 0.5);
 }
 
 .tableHeader {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  font-weight: 700;
-  font-size: 14px;
-  line-height: 17px;
-  color: #ef2339;
-  margin: 0.5rem 0;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 29px;
+  text-align: center;
+  color: #000000;
+}
+
+.tableHeader > div:nth-child(1) {
+  width: 50%;
+  text-align: left;
+}
+
+.standings > div:nth-child(2),
+.standings > div:nth-child(3),
+.standings > div:nth-child(4),
+.standings > div:nth-child(5),
+.standings > div:nth-child(6) {
+  width: 10%;
+  border-bottom: 1px solid rgba(20, 18, 19, 0.05);
+  padding: 1rem 0;
 }
 
 .standings {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  font-weight: 700;
-  font-size: 14px;
-  line-height: 17px;
+  font-weight: 400;
+  font-size: 12px;
+  text-align: center;
+  color: #000000;
 }
 
 .standings > div:nth-child(1) {
@@ -50,4 +79,51 @@
   align-items: center;
   gap: 1rem;
   padding: 0.5rem 0;
+  width: 50%;
+  text-align: left;
+}
+
+.tableHeader > div:nth-child(2),
+.tableHeader > div:nth-child(3),
+.tableHeader > div:nth-child(4),
+.tableHeader > div:nth-child(5),
+.tableHeader > div:nth-child(6) {
+  width: 10%;
+  border-bottom: 1px solid rgba(20, 18, 19, 0.05);
+  padding: 0.5rem 0;
+}
+
+.standings > div:nth-child(1) > img {
+  height: 16px;
+  width: 16px;
+}
+
+.viewFull {
+  display: flex;
+  align-items: center;
+  padding: 1.2rem 1rem;
+  background: #001a43;
+  border-top: 1px solid #1c1c1c;
+}
+
+.viewFull > div:nth-child(1) {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-weight: 400;
+  font-size: 10px;
+  line-height: 15px;
+  cursor: pointer;
+  color: #ffffff;
+}
+
+.viewFull > div:nth-child(1) > span:nth-child(2) {
+  color: rgba(255, 255, 255, 0.5);
+}
+
+.viewFull > div:nth-child(2) {
+  margin-left: auto;
+  display: flex;
+  align-items: center;
+  gap: 8px;
 }

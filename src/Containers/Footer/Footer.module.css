@@ -1,166 +1,99 @@
 .container {
-  background: #f5f5f5;
+  background: #001a43;
+  padding: 3rem 20%;
+  text-align: center;
+  color: #ffffff;
 }
 
-.topContainer {
-  display: flex;
-  align-items: center;
-  gap: 140px;
-  padding: 3.5rem 7.625rem;
+.textSection {
+  margin: 2.5rem 0;
 }
 
-.topContainer > div {
-  width: 50%;
+.textSection > h6 {
+  font-weight: 600;
+  font-size: 8px;
+  line-height: 12px;
 }
 
-.topContainer > div:nth-child(1) > p {
-  margin: 0.6rem 0;
+.textSection > p {
   font-weight: 400;
-  font-size: 16px;
-  line-height: 25px;
+  font-size: 8px;
+  line-height: 12px;
 }
 
-.topContainer > div:nth-child(2) > h4:nth-child(1) {
-  font-weight: 800;
-  font-size: 16px;
-  line-height: 21px;
-}
-
-.topContainer > div:nth-child(2) > div:nth-child(2) {
-  margin-top: 12px;
+.footerNav {
   display: flex;
   align-items: center;
-}
-
-.topContainer > div:nth-child(2) > div:nth-child(2) > button {
-  height: 45px;
-  width: 123px;
-  background: #333333;
-  border-radius: 3px 0px 0px 3px;
-  font-weight: 800;
-  font-size: 16px;
+  justify-content: center;
+  gap: 2rem;
+  font-weight: 400;
+  font-size: 14px;
   line-height: 21px;
-  color: #f5f5f5;
-  padding: 12px;
-  border: none;
-  outline: none;
+  margin-bottom: 1.5rem;
 }
 
-.topContainer > div:nth-child(2) > div:nth-child(2) > input {
-  height: 45px;
-  width: 100%;
-  background: rgba(196, 196, 196, 0.1);
-  border: 1px solid #333333;
-  border-radius: 3px 0px 0px 3px;
-  outline: none;
-  padding: 0 1rem;
-  font-weight: 500;
-  font-size: 14px;
-  line-height: 19px;
-}
-
-.topContainer > div:nth-child(2) > div:nth-child(2) > input::placeholder {
-  font-weight: 500;
-  font-size: 14px;
-  line-height: 19px;
-  color: rgba(51, 51, 51, 0.6);
-}
-
-.topContainer > div:nth-child(2) > div:nth-child(3) {
-  font-weight: 500;
-  font-size: 14px;
-  line-height: 19px;
-  text-transform: lowercase;
-  color: rgba(51, 51, 51, 0.6);
-  margin-top: 0.25rem;
-  margin-left: 1rem;
-}
-
-.bottomContainer {
-  padding: 1.2rem 7.625rem;
-  display: flex;
+.mobileNav {
+  background: var(--foregroundBlack);
+  padding: 1.5rem 40px;
+  text-align: center;
+  border-top: 2px solid #ffd91b;
   align-items: center;
   justify-content: space-between;
-  background: #d5d5d5;
+  display: none;
 }
 
-.leftSection {
-  display: flex;
-  align-items: center;
-  gap: 40px;
-  font-weight: 800;
-  font-size: 16px;
-  line-height: 21px;
+.mobileNav > a {
+  transition: all 0.3s ease-in-out;
 }
 
-.rightSection {
-  font-weight: 700;
-  font-size: 16px;
-  line-height: 21px;
-}
-
-.rightSection > span {
-  font-weight: 600;
-  font-size: 16px;
+.activeNav {
+  color: #ffd91b;
 }
 
 @media screen and (min-width: 767px) and (max-width: 1023px) {
-  .topContainer {
-    flex-direction: column;
-    gap: 20px;
-    padding: 3.5rem 2rem;
+  .container {
+    padding: 1.5rem 20px;
+    background: var(--backgroundBlack);
   }
 
-  .topContainer > div {
-    width: 100%;
-  }
-
-  .bottomContainer {
-    padding: 1.2rem 2rem;
-    flex-direction: column;
-  }
-
-  .leftSection {
-    display: flex;
-    gap: 16px;
-    font-size: 14px;
+  .footerNav {
     flex-wrap: wrap;
-    justify-content: space-between;
-    width: 100%;
+    font-size: 10px;
   }
 
-  .rightSection {
-    margin-top: 2rem;
-    font-size: 14px;
+  .footerNav > a {
+    flex-basis: 10%;
+    flex-grow: 0;
+    flex-shrink: 0;
+    width: 1000px;
+    justify-items: center;
+  }
+
+  .mobileNav {
+    display: flex;
   }
 }
 
 @media screen and (max-width: 767px) {
-  .topContainer {
-    flex-direction: column;
-    gap: 20px;
-    padding: 3.5rem 1rem;
+  .container {
+    padding: 1.5rem 20px;
+    background: var(--backgroundBlack);
   }
 
-  .topContainer > div {
-    width: 100%;
+  .footerNav {
+    flex-wrap: wrap;
+    font-size: 10px;
   }
 
-  .bottomContainer {
-    padding: 1.2rem 1rem;
-    flex-direction: column;
+  .footerNav > a {
+    flex-basis: 20%;
+    flex-grow: 0;
+    flex-shrink: 0;
+    width: 1000px;
+    justify-items: center;
   }
 
-  .leftSection {
+  .mobileNav {
     display: flex;
-    gap: 16px;
-    font-size: 14px;
-    flex-direction: column;
-    justify-content: space-between;
-  }
-
-  .rightSection {
-    margin-top: 2rem;
-    font-size: 14px;
   }
 }
