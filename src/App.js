@@ -1,6 +1,6 @@
 import React from "react";
 import {
-  HashRouter as Router,
+  BrowserRouter as Router,
   Routes,
   Route,
   Navigate,
@@ -10,6 +10,7 @@ import Layout from "./Components/Layout/Layout";
 import BlogPostContainer from "./Containers/BlogPostContainer/BlogPostContainer";
 import SearchResultContainer from "./Containers/SearchResultContainer/SearchResultContainer";
 import BlogPopularPostContainer from "./Containers/BlogPopularPostContainer/BlogPopularPostContainer";
+import ScorePageTables from "./Containers/ScorePageTables/ScorePageTables";
 
 function App() {
   return (
@@ -19,7 +20,6 @@ function App() {
         <Route path="/" element={<Navigate replace to="/home" />} />
         <Route path="/news" element={<Layout />} />
         <Route path="/fixtures" element={<Layout />} />
-        <Route path="/league-table" element={<Layout />} />
         <Route path="/soccer" element={<Layout />} />
         <Route path="/nba" element={<Layout />} />
         <Route path="/shop" element={<Layout />} />
@@ -31,6 +31,7 @@ function App() {
           path="/home/popular/:popularId"
           element={<BlogPopularPostContainer />}
         />
+        <Route path="/league-tables" element={<ScorePageTables />} />
       </Routes>
     </Router>
   );

@@ -53,7 +53,7 @@ const Header = () => {
       {/* {!displaySearch && ( */}
       {!displaySearch && (
         <div className={classes.navItemSection}>
-          {navItems.map((data, i) => {
+          {navItems.map((data) => {
             return (
               <Link
                 key={data.id}
@@ -69,7 +69,6 @@ const Header = () => {
                 )}
 
                 <div className={classes.navItem}>
-                  {/* <div>{data.icon}</div> */}
                   <div>{data.title}</div>
                 </div>
               </Link>
@@ -77,8 +76,12 @@ const Header = () => {
           })}
         </div>
       )}
-      {/* )} */}
-      <div className={classes.search} ref={searchRef}>
+
+      <div
+        className={classes.search}
+        style={!displaySearch ? { width: "20%" } : null}
+        ref={searchRef}
+      >
         {displaySearch ? (
           <input
             type="search"

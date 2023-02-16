@@ -26,7 +26,7 @@ export const navItems = [
     id: v4(),
     title: "LEAUGE TABLE",
     isActive: false,
-    route: "/league-table",
+    route: "/league-tables",
     icon: <FontAwesomeIcon icon={faRankingStar} />,
   },
 ];
