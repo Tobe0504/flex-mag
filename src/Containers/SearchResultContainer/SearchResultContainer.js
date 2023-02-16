@@ -1,7 +1,6 @@
 import React from "react";
 import Layout from "../../Components/Layout/Layout";
 import BlogPostPopularPosts from "../BlogPostContainer/BlogPostPopularPosts";
-import HomeTweetSection from "../Home/HomeTweetSection";
 import SearchAddContainer from "./SearchAddContainer";
 import classes from "./SearchResultContainer.module.css";
 import SearchResults from "./SearchResults";

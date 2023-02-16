@@ -1,11 +1,54 @@
-import React from "react";
+import React, { useContext } from "react";
 import { leaguesTable } from "../../Utilities/leagueTable";
 import classes from "./LeagueTableContainer.module.css";
 import { faAngleLeft, faAngleRight } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { SocialIcon } from "react-social-icons";
+import { TablesContext } from "../../Context/TablesContext";
+import { useNavigate } from "react-router-dom";
+import { useEffect } from "react";
 
 const LeagueTableContainer = () => {
+  // context
+  const {
+    premierLeagueTable,
+    fetchAllLeagueTables,
+    // spanishLeagueTable,
+    // frenchLeagueTable,
+    // germanLeagueTable,
+    // italianLeagueTable,
+  } = useContext(TablesContext);
+
+  // navigation
+  const navigate = useNavigate();
+
+  // effects
+  useEffect(() => {
+    fetchAllLeagueTables();
+
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
+
+  // state
+  // const [leagueTableCount, setLeagueTableCount] = useState(0);
+  // const [activeLEagueTable, setActiveLeagueTable] = useState([]);
+
+  // useEffect(() => {
+  //   if (leagueTableCount === 0 && premierLeagueTable.length > 0) {
+  //     setActiveLeagueTable(...premierLeagueTable);
+  //   } else if (leagueTableCount === 1) {
+  //     return spanishLeagueTable;
+  //   } else if (leagueTableCount === 2) {
+  //     return frenchLeagueTable;
+  //   } else if (leagueTableCount === 3) {
+  //     return germanLeagueTable;
+  //   } else if (leagueTableCount === 4) {
+  //     return italianLeagueTable;
+  //   }
+
+  //   console.log(activeLEagueTable, "active league table");
+  // }, [leagueTableCount]);
+
   return (
     <div className={classes.container}>
       <div className={classes.header}>
@@ -30,29 +73,42 @@ const LeagueTableContainer = () => {
         <div>Pts</div>
       </div>
       <div className={classes.table}>
-        {leaguesTable[0].leagueTable.slice(0, 6).map((datum, i) => {
-          return (
-            <div className={classes.standings} key={datum.id}>
-              <div>
-                <img
-                  alt="hmm"
-                  src={`http://purecatamphetamine.github.io/country-flag-icons/3x2/US.svg`}
-                  className={classes.hmm}
-                />
+        {premierLeagueTable
+          ?.sort((a, b) => {
+            return a.rank - b.rank;
+          })
+          ?.slice(0, 6)
+          .map((datum, i) => {
+            return (
+              <div className={classes.standings} key={datum.id}>
+                <div>
+                  <img
+                    alt="hmm"
+                    src={`http://purecatamphetamine.github.io/country-flag-icons/3x2/US.svg`}
+                    className={classes.hmm}
+                  />
 
-                <div>{datum.clubName}</div>
+                  <div>
+                    {datum.participant.name.length < 15
+                      ? datum.participant?.name
+                      : `${datum.participant?.name.slice(0, 12)}...`}
+                  </div>
+                </div>
+                <div>{datum.standing_data[4].value}</div>
+                <div>{datum.standing_data[5].value}</div>
+                <div>{datum.standing_data[6].value}</div>
+                <div>{datum.standing_data[3].value}</div>
+                <div>{datum.standing_data[0].value}</div>
               </div>
-              <div>{datum.points}</div>
-              <div>{datum.points}</div>
-              <div>{datum.points}</div>
-              <div>{datum.points}</div>
-              <div>{datum.points}</div>
-            </div>
-          );
-        })}
+            );
+          })}
       </div>
       <div className={classes.viewFull}>
-        <div>
+        <div
+          onClick={() => {
+            navigate("/league-tables");
+          }}
+        >
           <span>View full table</span>
           <span>
             <FontAwesomeIcon icon={faAngleRight} />
