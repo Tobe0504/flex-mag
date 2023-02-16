@@ -55,9 +55,17 @@ const Header = () => {
       <div className={classes.responsivemenu}>
         <FontAwesomeIcon icon={faBars} onClick={openSideMenu} />
       </div>
-      <div className={classes.logoSection}>
-        <img src={flexmagLogo} alt="FlexMag Logo" />
-      </div>
+      {!displaySearch && (
+        <div className={classes.logoSection}>
+          <img
+            src={flexmagLogo}
+            alt="FlexMag Logo"
+            onClick={() => {
+              navigate("/home");
+            }}
+          />
+        </div>
+      )}
       {/* {!displaySearch && ( */}
       {!displaySearch && (
         <div className={classes.navItemSection}>

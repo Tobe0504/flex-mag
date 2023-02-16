@@ -19,6 +19,10 @@
   height: 100%;
 }
 
+.mobilePopularPost {
+  display: none;
+}
+
 @media screen and (max-width: 767px) {
   .popularNews {
     display: none;
@@ -28,5 +32,9 @@
 
   .bodyMain {
     gap: 0rem;
+  }
+
+  .mobilePopularPost {
+    display: block;
   }
 }
