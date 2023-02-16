@@ -22,6 +22,10 @@
   padding: 0 20px;
 }
 
+.mobilePopularNews {
+  display: none;
+}
+
 @media screen and (min-width: 767px) and (max-width: 1023px) {
   .leftSection,
   .rightSection {
@@ -30,6 +34,10 @@
   .containerMain {
     width: 100%;
     padding: 0;
+  }
+
+  .mobilePopularNews {
+    display: block;
   }
 }
 
@@ -42,5 +50,8 @@
   .containerMain {
     width: 100%;
     padding: 0;
+  }
+  .mobilePopularNews {
+    display: block;
   }
 }

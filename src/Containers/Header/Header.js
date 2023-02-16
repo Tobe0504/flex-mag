@@ -42,10 +42,18 @@ const Header = () => {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
+  const openSideMenu = () => {
+    document.getElementById("sideMenu").style.width = "100%";
+  };
+
+  const closeSideMenu = () => {
+    document.getElementById("sideMenu").style.width = "0%";
+  };
+
   return (
     <div className={classes.container}>
       <div className={classes.responsivemenu}>
-        <FontAwesomeIcon icon={faBars} />
+        <FontAwesomeIcon icon={faBars} onClick={openSideMenu} />
       </div>
       <div className={classes.logoSection}>
         <img src={flexmagLogo} alt="FlexMag Logo" />
@@ -109,6 +117,40 @@ const Header = () => {
             />
           </i>
         )}
+      </div>
+
+      <div id="sideMenu" className={classes.sideNav}>
+        <div className={classes.sideNavInner}>
+          <button className={classes.btnClose} onClick={closeSideMenu}>
+            &times;
+          </button>
+          <div className={classes.sideContainer}>
+            <img src={flexmagLogo} alt="YSP Logo" />
+          </div>
+          <div className={classes.scontainer}>
+            <div className={classes.navBox}>
+              {navItems.map((data) => {
+                return (
+                  <Link
+                    key={data.id}
+                    to={data.route}
+                    className={
+                      window.location.href.includes(data.route)
+                        ? `${classes.activeNavy}`
+                        : undefined
+                    }
+                  >
+                    <div
+                      className={`${classes.navItem} ${classes.navItemResponsive}`}
+                    >
+                      <div>{data.title}</div>
+                    </div>
+                  </Link>
+                );
+              })}
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   );

@@ -9,7 +9,7 @@ import { v4 } from "uuid";
 export const navItems = [
   {
     id: v4(),
-    title: "HOME",
+    title: "Home",
     isActive: false,
     route: "/home",
     icon: <FontAwesomeIcon icon={faHome} />,
@@ -17,14 +17,14 @@ export const navItems = [
 
   {
     id: v4(),
-    title: "FIXTURES",
+    title: "Fixtures",
     isActive: false,
     route: "/fixtures",
     icon: <FontAwesomeIcon icon={faCalendarWeek} />,
   },
   {
     id: v4(),
-    title: "LEAUGE TABLE",
+    title: "League Table",
     isActive: false,
     route: "/league-tables",
     icon: <FontAwesomeIcon icon={faRankingStar} />,

@@ -32,6 +32,9 @@ const Home = () => {
             <div className={classes.news}>
               <HomeNews />
             </div>
+            <div className={classes.mobilePopularNews}>
+              <PopularNews />
+            </div>
           </div>
           <div className={classes.rightSection}>
             <div className={classes.leagueTable}>
