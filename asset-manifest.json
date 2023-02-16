@@ -1,18 +1,20 @@
 {
   "files": {
-    "main.css": "/static/css/main.6fd53c61.css",
-    "main.js": "/static/js/main.79f7d45c.js",
+    "main.css": "/static/css/main.d05b3739.css",
+    "main.js": "/static/js/main.3ae158fb.js",
     "static/js/787.6bdf8e4e.chunk.js": "/static/js/787.6bdf8e4e.chunk.js",
+    "static/media/realmadrid.svg": "/static/media/realmadrid.b4edc229ca45a5f7b202675734583178.svg",
     "static/media/chelseaLogo.svg": "/static/media/chelseaLogo.1f581c124d0f1d5895030b9e84b8b0f3.svg",
+    "static/media/barcelona.svg": "/static/media/barcelona.65197c8efa5b9f55a2955dce4d7150e6.svg",
     "static/media/flexmagLogo.svg": "/static/media/flexmagLogo.c59437434b93f1ca9ff60c94d6a2ee46.svg",
     "index.html": "/index.html",
     "static/media/ovalProfileImage.svg": "/static/media/ovalProfileImage.f6f480f9a53b601193bb2ef4c08df209.svg",
-    "main.6fd53c61.css.map": "/static/css/main.6fd53c61.css.map",
-    "main.79f7d45c.js.map": "/static/js/main.79f7d45c.js.map",
+    "main.d05b3739.css.map": "/static/css/main.d05b3739.css.map",
+    "main.3ae158fb.js.map": "/static/js/main.3ae158fb.js.map",
     "787.6bdf8e4e.chunk.js.map": "/static/js/787.6bdf8e4e.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.6fd53c61.css",
-    "static/js/main.79f7d45c.js"
+    "static/css/main.d05b3739.css",
+    "static/js/main.3ae158fb.js"
   ]
 }
