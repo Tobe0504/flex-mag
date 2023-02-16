@@ -40,14 +40,14 @@ const BlogContent = ({ datum }) => {
             fgColor="#8E99A8"
           />
         </div>
-        <div className={classes.commentCount}>
+        {/* <div className={classes.commentCount}>
           <div>{10}</div>
           <div>COMMENTS</div>
-        </div>
-        <div className={classes.shareCount}>
+        </div> */}
+        {/* <div className={classes.shareCount}>
           {<div>0</div>}
           <div>SHARES</div>
-        </div>
+        </div> */}
       </div>
       <div className={classes.textSection}>
         {datum?.body_text?.split("\n").map((paragraph, i) => {
@@ -89,14 +89,14 @@ const BlogContent = ({ datum }) => {
             fgColor="#8E99A8"
           />
         </div>
-        <div className={classes.commentCount}>
+        {/* <div className={classes.commentCount}>
           <div>{10}</div>
           <div>COMMENTS</div>
-        </div>
-        <div className={classes.shareCount}>
+        </div> */}
+        {/* <div className={classes.shareCount}>
           {datum?.shareCount ? <div>{datum?.shareCount}</div> : <div>0</div>}
           <div>SHARES</div>
-        </div>
+        </div> */}
       </div>
     </div>
   );

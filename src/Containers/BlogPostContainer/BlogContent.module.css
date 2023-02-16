@@ -37,7 +37,7 @@
   display: flex;
   align-items: center;
   justify-content: space-evenly;
-  width: 40%;
+  width: 30%;
   border-left: 1px solid #979797;
 }
 
@@ -104,4 +104,24 @@
   justify-content: space-between;
   width: 30%;
   padding-right: 1.5rem;
+}
+
+@media screen and (max-width: 767px) {
+  .socialSections {
+    flex-direction: column;
+    gap: 1.5rem;
+    align-items: center;
+  }
+
+  .detailSection {
+    width: 100%;
+  }
+
+  .socialIconSection {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    width: 70%;
+    border-left: none;
+  }
 }

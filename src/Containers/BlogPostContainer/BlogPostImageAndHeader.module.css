@@ -82,3 +82,29 @@
   color: #ffffff;
   margin-top: 1em;
 }
+
+@media screen and (max-width: 767px) {
+  .textInner > div:nth-child(2) {
+    width: 100%;
+    font-size: 24px;
+    line-height: 34px;
+    margin: 0.5rem 0;
+  }
+
+  .textInner > div:nth-child(3) {
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 24px;
+    color: #ffffff;
+    margin-top: 1em;
+  }
+
+  .textInner {
+    width: 100%;
+    margin-bottom: 2rem;
+  }
+
+  .topFeatured {
+    margin-bottom: 2rem;
+  }
+}
