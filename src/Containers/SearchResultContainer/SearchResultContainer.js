@@ -16,10 +16,12 @@ const SearchResultContainer = () => {
         <div className={classes.bodyMain}>
           <div className={classes.searchResults}>
             <SearchResults />
+            <div className={classes.mobilePopularPost}>
+              <BlogPostPopularPosts />
+            </div>
           </div>
           <div className={classes.popularNews}>
             <BlogPostPopularPosts />
-            <HomeTweetSection />
           </div>
         </div>
       </div>

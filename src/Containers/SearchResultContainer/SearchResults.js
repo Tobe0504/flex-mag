@@ -46,7 +46,9 @@ const SearchResults = () => {
           />
         </div>
       ) : !isSendingRequest && searchResults.length < 1 ? (
-        <div className={classes.readMore}>No content found</div>
+        <div className={`${classes.readMore} ${classes.noContent}`}>
+          No content found
+        </div>
       ) : (
         <>
           <div className={classes.searchResultContainer}>

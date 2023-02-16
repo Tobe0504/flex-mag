@@ -18,3 +18,15 @@
   width: 400px;
   height: 100%;
 }
+
+@media screen and (max-width: 767px) {
+  .popularNews {
+    display: none;
+    border: 2px solid red;
+    width: 0px;
+  }
+
+  .bodyMain {
+    gap: 0rem;
+  }
+}
