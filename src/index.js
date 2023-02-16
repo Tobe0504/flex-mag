@@ -5,15 +5,18 @@ import App from "./App";
 import reportWebVitals from "./reportWebVitals";
 import AppContextProvider from "./Context/AppContext";
 import TablesContextProvider from "./Context/TablesContext";
+import MatchesContextProvider from "./Context/MatchesContext";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <AppContextProvider>
-    <TablesContextProvider>
-      <React.StrictMode>
-        <App />
-      </React.StrictMode>
-    </TablesContextProvider>
+    <MatchesContextProvider>
+      <TablesContextProvider>
+        <React.StrictMode>
+          <App />
+        </React.StrictMode>
+      </TablesContextProvider>
+    </MatchesContextProvider>
   </AppContextProvider>
 );
 

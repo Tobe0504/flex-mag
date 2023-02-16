@@ -39,14 +39,14 @@ const ScorePageTablesContainer = (props) => {
               // }}
             >
               <div className={classes.leagueHeaderdata}>
-                <div>
+                {/* <div>
                   <img
                     alt={"hmm"}
                     src={`http://eapi.enetpulse.com/image/team_logo/?teamFK=10260&username=alphaapiusr&token=791848b8897d12cfb5fa9e76895bf3ba`}
                     className={classes.hmm}
                   />
-                </div>
-                <div>
+                </div> */}
+                <div className={classes.textSection}>
                   <span>{props.name}</span>
                   <span>{props.country_name}</span>
                 </div>

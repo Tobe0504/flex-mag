@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
-// import ScorePageLayout from "../../Components/ScorePageLayout/ScorePageLayout";
+import classes from "./ScorePageTables.module.css";
 import { useContext } from "react";
-import { LinearProgress } from "@mui/material";
+import { CircularProgress } from "@mui/material";
 import { TablesContext } from "../../Context/TablesContext";
 import ScorePageTablesContainer from "./ScorePageTablesContainer";
 import Layout from "../../Components/Layout/Layout";
@@ -24,48 +24,56 @@ const ScorePageTables = () => {
 
   useEffect(() => {
     fetchAllLeagueTables();
+
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   return (
     <Layout showNavSection={true}>
-      {premierLeagueTableIsLoading &&
-      spanishLeagueTableIsLoading &&
-      germanLeagueTableIsLoading &&
-      frenchLeagueTableIsLoading &&
-      italianLeagueTableIsLoading ? (
-        <LinearProgress
-          color="inherit"
-          style={{ color: "#ffd91b", height: ".1rem" }}
-        />
-      ) : (
-        <>
-          <ScorePageTablesContainer
-            league={premierLeagueTable}
-            name="Premier League"
-            country_name="England"
-          />
-          <ScorePageTablesContainer
-            league={spanishLeagueTable}
-            name="La Liga"
-            country_name="Spain"
-          />
-          <ScorePageTablesContainer
-            league={frenchLeagueTable}
-            name="Ligue 1"
-            country_name="France"
-          />
-          <ScorePageTablesContainer
-            league={germanLeagueTable}
-            name="Bundesliga"
-            country_name="Germany"
-          />
-          <ScorePageTablesContainer
-            league={italianLeagueTable}
-            name="Serie A"
-            country_name="Italy"
-          />
-        </>
-      )}
+      <div className={classes.container}>
+        {premierLeagueTableIsLoading &&
+        spanishLeagueTableIsLoading &&
+        germanLeagueTableIsLoading &&
+        frenchLeagueTableIsLoading &&
+        italianLeagueTableIsLoading ? (
+          <div className={classes.loading}>
+            <CircularProgress
+              color="inherit"
+              size="1rem"
+              style={{ color: "#EF2339" }}
+            />
+            <span>Loading league tables</span>
+          </div>
+        ) : (
+          <>
+            <ScorePageTablesContainer
+              league={premierLeagueTable}
+              name="Premier League"
+              country_name="England"
+            />
+            <ScorePageTablesContainer
+              league={spanishLeagueTable}
+              name="La Liga"
+              country_name="Spain"
+            />
+            <ScorePageTablesContainer
+              league={frenchLeagueTable}
+              name="Ligue 1"
+              country_name="France"
+            />
+            <ScorePageTablesContainer
+              league={germanLeagueTable}
+              name="Bundesliga"
+              country_name="Germany"
+            />
+            <ScorePageTablesContainer
+              league={italianLeagueTable}
+              name="Serie A"
+              country_name="Italy"
+            />
+          </>
+        )}
+      </div>
     </Layout>
   );
 };

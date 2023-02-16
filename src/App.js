@@ -11,6 +11,7 @@ import BlogPostContainer from "./Containers/BlogPostContainer/BlogPostContainer"
 import SearchResultContainer from "./Containers/SearchResultContainer/SearchResultContainer";
 import BlogPopularPostContainer from "./Containers/BlogPopularPostContainer/BlogPopularPostContainer";
 import ScorePageTables from "./Containers/ScorePageTables/ScorePageTables";
+import ScorePageMatches from "./Containers/ScorePageMatches/ScorePageMatches";
 
 function App() {
   return (
@@ -19,7 +20,7 @@ function App() {
         <Route path="/home" element={<Home />} />
         <Route path="/" element={<Navigate replace to="/home" />} />
         <Route path="/news" element={<Layout />} />
-        <Route path="/fixtures" element={<Layout />} />
+        <Route path="/fixtures" element={<ScorePageMatches />} />
         <Route path="/soccer" element={<Layout />} />
         <Route path="/nba" element={<Layout />} />
         <Route path="/shop" element={<Layout />} />

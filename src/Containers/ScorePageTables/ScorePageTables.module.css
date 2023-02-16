@@ -7,11 +7,17 @@
   }
 }
 
+.container {
+  min-height: 90vh;
+}
+
 .leagueHeader {
   display: flex;
   align-items: center;
   gap: 16px;
   padding: 1rem 2rem;
+  background: #001a43;
+  color: #ffffff;
 }
 
 .leagueHeaderdata {
@@ -25,13 +31,13 @@
   width: 21px;
 }
 
-.leagueHeaderdata > div:nth-child(2) > span:nth-child(1) {
+.textSection > span:nth-child(1) {
   font-weight: 500;
   font-size: 12px;
   line-height: 18px;
 }
 
-.leagueHeaderdata > div:nth-child(2) > span:nth-child(2) {
+.textSection > span:nth-child(2) {
   font-weight: 400;
   font-size: 8px;
   line-height: 12px;
@@ -58,7 +64,7 @@
   font-weight: 400;
   font-size: 14px;
   line-height: 21px;
-  color: #ffd91b;
+  color: #ef2339;
 }
 
 .leagueTableHead > div:nth-child(2) {
@@ -134,6 +140,18 @@
 
 .leagueNameData span:nth-child(1) {
   color: #c91922;
+}
+
+.loading {
+  height: 50vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.loading > span {
+  margin-top: 1rem;
 }
 
 @media screen and (max-width: 767px) {
