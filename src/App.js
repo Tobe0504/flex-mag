@@ -14,6 +14,7 @@ import ScorePageTables from "./Containers/ScorePageTables/ScorePageTables";
 import ScorePageMatches from "./Containers/ScorePageMatches/ScorePageMatches";
 
 function App() {
+  console.log(process.env.NODE_ENV, "thisnis the env haha");
   return (
     <Router>
       <Routes>

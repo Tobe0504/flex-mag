@@ -135,7 +135,7 @@ wp_remote_post( admin_url('admin-ajax.php?action=get_articles_from_api'), [
     'blocking' => false,
     'sslverify' => false,
     'body' => [
-        'current_page' => $current_page;
+        'current_page' => $current_page
     ],
 ]);
 

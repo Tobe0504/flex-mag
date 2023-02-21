@@ -1,5 +1,6 @@
 import axios from "axios";
 import React, { createContext, useEffect, useState } from "react";
+import { URL } from "../Components/Global/Global";
 
 export const AppContext = createContext();
 
@@ -67,7 +68,7 @@ const AppContextProvider = (props) => {
 
   const fetchToSeeDataType = () => {
     axios
-      .get(`http://localhost:8000/wp-json/wp/v2/article?per_page=20`, {
+      .get(`${URL}/wp-json/wp/v2/article?per_page=20`, {
         headers: {
           Accept: "application/json",
         },
@@ -138,7 +139,7 @@ const AppContextProvider = (props) => {
     setNewsBodyContent({});
     setIsSendingRequest(true);
     axios
-      .get(`http://localhost:8000/wp-json/wp/v2/article/${uri}`, {
+      .get(`${URL}/wp-json/wp/v2/article/${uri}`, {
         headers: {
           Accept: "application/json",
         },
@@ -159,7 +160,7 @@ const AppContextProvider = (props) => {
     setSearchResults([]);
     setIsSendingRequest(true);
     axios
-      .get(`http://localhost:8000/wp-json/wp/v2/article?search=${searchValue}`)
+      .get(`${URL}wp-json/wp/v2/article?search=${searchValue}`)
       .then((res) => {
         setSearchResults(res.data);
         console.log(res, "be like say na search");
@@ -175,7 +176,7 @@ const AppContextProvider = (props) => {
     setSearchResults([]);
     setIsSendingRequest(true);
     axios
-      .get(`http://localhost:8000/wp-json/wp/v2/article?search=${tag}`)
+      .get(`${URL}/wp-json/wp/v2/article?search=${tag}`)
       .then((res) => {
         setSearchResults(res.data);
         console.log(res, "searchhhhh");
