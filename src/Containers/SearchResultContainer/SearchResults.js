@@ -33,7 +33,7 @@ const SearchResults = () => {
     <div className={classes.container}>
       {tag && (
         <div className={classes.header}>
-          Search results for{" "}
+          Search results for "{tag}"
           <span className={classes.searchText}>{tag.split(":")[1]}</span>
         </div>
       )}
@@ -56,24 +56,25 @@ const SearchResults = () => {
               return (
                 <div
                   className={classes.searchResult}
-                  key={data.uri}
+                  key={data?.id}
                   onClick={() => {
-                    navigate(`/home/${data.uri}`);
+                    navigate(`/home/${data.id}`);
                   }}
                 >
                   <div className={classes.imageSection}>
                     <img
                       src={
-                        data?.associations?.featureimage?.renditions?.["4x3"]
-                          .href
+                        data?.acf.associations?.featureimage?.renditions?.[
+                          "4x3"
+                        ].href
                       }
-                      alt={`${data?.headline}`}
+                      alt={`${data?.acf.headline}`}
                     />
                   </div>
                   <div className={classes.textSection}>
-                    <div>{data?.subject[1].name}</div>
-                    <div>{data?.headline}</div>
-                    <div>{data?.description_text}</div>
+                    <div>{data?.acf.subject[1].name}</div>
+                    <div>{data?.acf.headline}</div>
+                    <div>{data?.acf.description_text}</div>
                   </div>
                 </div>
               );

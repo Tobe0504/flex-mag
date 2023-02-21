@@ -5,7 +5,8 @@ import { SocialIcon } from "react-social-icons";
 import moment from "moment";
 
 const BlogContent = ({ datum }) => {
-  const datefromNow = moment(datum.firstcreated, "YYYYMMDD").fromNow();
+  const datefromNow = moment(datum?.versioncreated, "YYYYMMDD").fromNow();
+
   return (
     <div className={classes.container}>
       <div className={classes.socialSections}>

@@ -2,12 +2,19 @@ import React from "react";
 import classes from "./BlogPostImageAndHeader.module.css";
 
 const BlogPostImageAndHeader = ({ datum }) => {
+  let betterArray;
+  if (typeof datum?.associations === "string") {
+    betterArray = JSON.parse(datum?.associations);
+  } else {
+    betterArray = datum?.associations;
+  }
+
   return (
     <div className={classes.container}>
       <div className={classes.postImage}>
         <img
-          src={datum?.associations?.featureimage?.renditions?.original.href}
-          alt={datum?.associations?.featureimage?.description_text}
+          src={betterArray?.featureimage?.renditions?.original.href}
+          alt={betterArray?.featureimage?.description_text}
         />
 
         <div className={classes.filterOverlay}></div>

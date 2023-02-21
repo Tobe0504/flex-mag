@@ -39,7 +39,7 @@ const AppContextProvider = (props) => {
         }
       )
       .then((res) => {
-        setHeadlines(res.data.item);
+        // setHeadlines(res.data.item);
         console.log(res, "psst");
         setIsSendingRequest(false);
       })
@@ -47,6 +47,40 @@ const AppContextProvider = (props) => {
         // console.log(err);
         setIsSendingRequest(false);
         setError(err.message);
+      });
+  };
+
+  // function removeBackslashes(obj) {
+  //   for (const prop in obj) {
+  //     if (typeof obj[prop] === "string") {
+  //       obj[prop] = obj[prop].replace(/\\/g, "");
+  //     } else if (typeof obj[prop] === "object") {
+  //       obj[prop] = removeBackslashes(obj[prop]);
+  //     }
+  //   }
+  //   return obj;
+  // }
+
+  // function removeBackslashesFromArray(arr) {
+  //   return arr.map((obj) => removeBackslashes(obj));
+  // }
+
+  const fetchToSeeDataType = () => {
+    axios
+      .get(`http://localhost:8000/wp-json/wp/v2/article?per_page=20`, {
+        headers: {
+          Accept: "application/json",
+        },
+        responseType: "json",
+      })
+      .then((res) => {
+        console.log(res, "see from wORDPRESS haha");
+        setHeadlines(res.data);
+        setIsSendingRequest(false);
+        console.log(JSON.parse(res.data[0].acf.associations, "test"));
+      })
+      .catch((err) => {
+        console.log(err, "wr errpr");
       });
   };
 
@@ -104,18 +138,14 @@ const AppContextProvider = (props) => {
     setNewsBodyContent({});
     setIsSendingRequest(true);
     axios
-      .get(
-        `https://content.api.pressassociation.io/v1/item/${uri}?fields=uri,headline,subject,associations,description_text,subject,body_text,byline,firstcreated`,
-        {
-          headers: {
-            apikey: process.env.REACT_APP_PA_API_KEY,
-            Accept: "application/json",
-          },
-        }
-      )
+      .get(`http://localhost:8000/wp-json/wp/v2/article/${uri}`, {
+        headers: {
+          Accept: "application/json",
+        },
+      })
       .then((res) => {
         setNewsBodyContent(res.data);
-        console.log(res, "content");
+        console.log(res, "contentttt");
         setIsSendingRequest(false);
       })
       .catch((err) => {
@@ -129,18 +159,10 @@ const AppContextProvider = (props) => {
     setSearchResults([]);
     setIsSendingRequest(true);
     axios
-      .get(
-        `https://content.api.pressassociation.io/v1/item?subject=pakeyword:${searchValue}&limit=20&offset=${searchOffsetValue}&fields=total,limit,offset,item(uri,headline,subject,associations,description_text,subject,body_text,byline,firstcreated)`,
-        {
-          headers: {
-            apikey: process.env.REACT_APP_PA_API_KEY,
-            Accept: "application/json",
-          },
-        }
-      )
+      .get(`http://localhost:8000/wp-json/wp/v2/article?search=${searchValue}`)
       .then((res) => {
-        setSearchResults(res.data.item);
-        console.log(res);
+        setSearchResults(res.data);
+        console.log(res, "be like say na search");
         setIsSendingRequest(false);
       })
       .catch((err) => {
@@ -153,18 +175,10 @@ const AppContextProvider = (props) => {
     setSearchResults([]);
     setIsSendingRequest(true);
     axios
-      .get(
-        `https://content.api.pressassociation.io/v1/item?subject=${tag}&limit=20&offset=${searchOffsetValue}&fields=total,limit,offset,item(uri,headline,subject,associations,description_text,subject,body_text,byline,firstcreated)`,
-        {
-          headers: {
-            apikey: process.env.REACT_APP_PA_API_KEY,
-            Accept: "application/json",
-          },
-        }
-      )
+      .get(`http://localhost:8000/wp-json/wp/v2/article?search=${tag}`)
       .then((res) => {
-        setSearchResults(res.data.item);
-        console.log(res);
+        setSearchResults(res.data);
+        console.log(res, "searchhhhh");
         setIsSendingRequest(false);
       })
       .catch((err) => {
@@ -206,6 +220,7 @@ const AppContextProvider = (props) => {
         fetchParticularNewsContent,
         newsBodyContent,
         searchHandler,
+        fetchToSeeDataType,
       }}
     >
       {props.children}

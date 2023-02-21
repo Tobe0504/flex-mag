@@ -13,13 +13,14 @@ const HomeNews = () => {
     isSendingRequest,
     headlines,
     fetchPopularStories,
-    fetchStoryContent,
+    fetchToSeeDataType,
   } = useContext(AppContext);
 
   // Effect
   useEffect(() => {
     fetchAllHeadlines();
     fetchPopularStories();
+    fetchToSeeDataType();
     // eslint-disable-next-line
   }, []);
 
@@ -80,25 +81,38 @@ const HomeNews = () => {
         </div>
       ) : (
         <div className={classes.container}>
-          {headlines.map((data) => {
-            const headlineImage = Object.values(
-              data.associations.featureimage.renditions
-            );
+          {headlines?.map((datum) => {
+            let data = datum?.acf;
+            let betterArray;
+            if (typeof data?.associations === "string") {
+              betterArray = JSON.parse(data?.associations);
+            } else {
+              betterArray = data?.associations;
+            }
+            const headlineImage =
+              betterArray?.featureimage?.renditions["original"].href;
+
+            let betterSubjectArray;
+            if (typeof data?.subject === "string") {
+              betterSubjectArray = JSON.parse(data?.subject);
+            } else {
+              betterSubjectArray = data?.subject;
+            }
+
             return (
               <div
                 className={classes.news}
                 key={data.uri}
                 onClick={() => {
-                  navigate(`/home/${data.uri}`);
+                  navigate(`/home/${datum.id}`);
                   scrollToTop();
-                  fetchStoryContent(data.uri);
                 }}
               >
                 <div>
-                  <img src={`${headlineImage[1].href}`} alt="" />
+                  <img src={`${headlineImage}`} alt="" />
                 </div>
                 <div className={classes.newsTextCenter}>
-                  <div>{data.subject[1].name}</div>
+                  <div>{betterSubjectArray[1]?.name}</div>
                   <div>{data.headline}</div>
                   <div>{data.description_text}</div>
                 </div>

@@ -39,19 +39,19 @@ const BlogPostContainer = () => {
       {isSendingRequest && !datum ? (
         <LinearProgress color="inherit" style={{ color: " #ef2339" }} />
       ) : (
-        <div className={classes.container} key={datum.uri}>
-          <BlogPostImageAndHeader datum={datum} />
+        <div className={classes.container} key={datum.id}>
+          <BlogPostImageAndHeader datum={datum?.acf} />
           <div className={classes.bodyMain}>
             <BlogContainerAd />
             <div className={classes.blogContentSection}>
               <div className={classes.blogContent}>
-                <BlogContent datum={datum} />
+                <BlogContent datum={datum?.acf} />
                 {/* <BlogPostCommentSection datum={datum} /> */}
               </div>
               <div className={classes.popularNews}>
                 <BlogPostPopularPosts popularStories={popularStories} />
                 <BlogCategoriesAndTags
-                  datum={datum}
+                  datum={datum?.acf}
                   tagsSearchAndCategory={tagsSearchAndCategory}
                 />
               </div>

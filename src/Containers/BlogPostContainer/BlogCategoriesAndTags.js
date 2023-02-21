@@ -14,6 +14,13 @@ const BlogCategoriesAndTags = ({ datum }) => {
     });
   };
 
+  let betterArray;
+  if (typeof datum?.subject === "string") {
+    betterArray = JSON.parse(datum?.subject);
+  } else {
+    betterArray = datum?.subject;
+  }
+
   return (
     <div className={classes.container}>
       <div className={classes.categories}>
@@ -24,17 +31,16 @@ const BlogCategoriesAndTags = ({ datum }) => {
           </div>
         </div>
         <div className={classes.categoriesSection}>
-          {datum?.subject
+          {betterArray
             ?.filter((data) => {
-              return data.code.includes("pa");
+              return data?.code.includes("pa");
             })
-            .map((category) => {
+            ?.map((category) => {
               return (
                 <div
                   key={category.code}
                   onClick={() => {
-                    // tagsSearchAndCategory(category.code);
-                    navigate(`/search/${category?.code}`);
+                    navigate(`/search/${category?.name}`);
                     scrollToTop();
                   }}
                 >
@@ -50,7 +56,7 @@ const BlogCategoriesAndTags = ({ datum }) => {
           </div>
         </div>
         <div className={classes.tagsSection}>
-          {datum?.subject
+          {betterArray
             ?.filter((data) => {
               return data?.code?.includes("tag");
             })
@@ -60,7 +66,7 @@ const BlogCategoriesAndTags = ({ datum }) => {
                   key={category?.code}
                   onClick={() => {
                     // tagsSearchAndCategory(category.code);
-                    navigate(`/search/${category?.code}`);
+                    navigate(`/search/${category?.name}`);
                     scrollToTop();
                   }}
                 >
